@@ -1,100 +1,115 @@
 {% extends "core/base.html" %}
 
 {% block content %}
+<!-- {{projects}} -->
 <h1 class="title">Lo más visto de SoloTodo</h1>
 <section class="global col s12">
     <section class="global-page">
         <section class="slider-tec">
-            <a class="short-description-product" href="{% url 'productoAOC' %}">
-                <section class="img-container">
-                    <img class="img-slider"
-                        src="https://publicapi.solotodo.com/products/69359/picture/?width=300&height=200"
-                        alt="">
-                </section>
-                <section class="name-producto">AOC C24G1</section>
-                <section class="desc-producto">LED 24.0" Full HD (1920X1080)</section>
-                <section class="precio-producto">$184.990</section>
-            </a>
-            <a class="short-description-product" href="./COOLER.htm">
-                <section class="img-container">
-                    <img class="img-slider"
-                        src="https://publicapi.solotodo.com/products/86265/picture/?width=300&height=200"
-                        alt="">
-                </section>
-                <section class="name-producto">Cooler Master MasterBox MB320L ARGB (MCB-B320L-KGNN-S02)
-                </section>
-                <section class="precio-producto">$63.990</section>
-            </a>
-            <a class="short-description-product" href="./INTELI5.htm">
-                <section class="img-container">
-                    <img class="img-slider"
-                        src="https://publicapi.solotodo.com/products/56956/picture/?width=300&height=200"
-                        alt="">
-                </section>
-                <section class="name-producto">Intel Core i5-9400F [BX80684I59400F]</section>
-                <section class="precio-producto">$150.900</section>
-            </a>
-            <a class="short-description-product" href="./GEAR.htm">
-                <section class="img-container">
-                    <img class="img-slider"
-                        src="https://publicapi.solotodo.com/products/74608/picture/?width=300&height=200"
-                        alt="">
-                </section>
-                <section class="name-producto">Gear G2450M (M2559P)</section>
-                <section class="desc-producto">LED 25.0" Full HD (1920x1080)</section>
-                <section class="precio-producto">$189.990</section>
-            </a>
-            <a class="short-description-product" href="./ASUS.htm">
-                <section class="img-container">
-                    <img class="img-slider"
-                        src="https://publicapi.solotodo.com/products/75940/picture/?width=300&height=200"
-                        alt="">
-                </section>
-                <section class="name-producto">ASUS VP249QGR</section>
-                <section class="desc-producto">LED 24.0" Full HD (1920x1080)</section>
-                <section class="precio-producto">$209.900</section>
-            </a>
-            <a class="short-description-product" href="./HPPAVILLON.htm">
-                <section class="img-container">
-                    <img class="img-slider"
-                        src="https://publicapi.solotodo.com/products/84901/picture/?width=300&height=200"
-                        alt="">
-                </section>
-                <section class="name-producto">HP Pavilion Gaming 16-A0001LA [165G0LA]</section>
-                <section class="desc-producto">Intel Core i5-10300H / 8 GB RAM / NVIDIA GeForce GTX 1650 (4 GB)
-                </section>
-                <section class="precio-producto">$749.990</section>
-            </a>
-            <a class="short-description-product" href="./ACER.htm">
-                <section class="img-container">
-                    <img class="img-slider"
-                        src="https://publicapi.solotodo.com/products/82229/picture/?width=300&height=200"
-                        alt="">
-                </section>
-                <section class="name-producto">Acer Nitro 5 AN515-54-59UV-1</section>
-                <section class="desc-producto">Intel Core i5-9300H / 8 GB RAM / NVIDIA GeForce GTX 1650 (4 GB)
-                </section>
-                <section class="precio-producto">$708.090</section>
-            </a>
-            <a class="short-description-product" href="./AZZA.htm">
-                <section class="img-container">
-                    <img class="img-slider"
-                        src="https://publicapi.solotodo.com/products/70185/picture/?width=300&height=200"
-                        alt="">
-                </section>
-                <section class="name-producto">Azza Luminous 110F (CSAZ-110F)</section>
-                <section class="precio-producto">$184.990</section>
-            </a>
-            <a class="short-description-product" href="./ASUSTUF.htm">
-                <section class="img-container">
-                    <img class="img-slider"
-                        src="https://publicapi.solotodo.com/products/81883/picture/?width=300&height=200"
-                        alt="">
-                </section>
-                <section class="name-producto">ASUS TUF FX505DT-BQ404T [90NR02D2-M09800]</section>
-                <section class="desc-producto">AMD Ryzen 5 3550H / 8 GB RAM / NVIDIA GeForce</section>
-                <section class="precio-producto">$630.490</section>
-            </a>
+            {% for project in projects  %}
+
+                <!-- <a class="short-description-product" href="{% url 'productoAOC' %}">
+                    <section class="img-container">
+                        <img class="img-slider"
+                            src="https://publicapi.solotodo.com/products/69359/picture/?width=300&height=200"
+                            alt="">
+                    </section>
+                    <section class="name-producto">AOC C24G1</section>
+                    <section class="desc-producto">LED 24.0" Full HD (1920X1080)</section>
+                    <section class="precio-producto">$184.990</section>
+                    https://publicapi.solotodo.com/products/69359/picture/?width=300&height=200
+                </a> -->
+                <a class="short-description-product" href="{% url 'productoAOC' %}">
+                    <section class="img-container">
+                        <img class="img-slider"                    
+                            src="{{ project.imagen.url }}"
+                            alt="">
+                    </section>
+                    <section class="name-producto">{{ project.name }}</section>
+                    <section class="desc-producto">{{ project.description }}</section>
+                    <section class="precio-producto">${{ project.precio }}</section>
+                </a>
+                <!-- <a class="short-description-product" href="./COOLER.htm">
+                    <section class="img-container">
+                        <img class="img-slider"
+                            src="https://publicapi.solotodo.com/products/86265/picture/?width=300&height=200"
+                            alt="">
+                    </section>
+                    <section class="name-producto">Cooler Master MasterBox MB320L ARGB (MCB-B320L-KGNN-S02)
+                    </section>
+                    <section class="precio-producto">$63.990</section>
+                </a> -->
+                <!-- <a class="short-description-product" href="./INTELI5.htm">
+                    <section class="img-container">
+                        <img class="img-slider"
+                            src="https://publicapi.solotodo.com/products/56956/picture/?width=300&height=200"
+                            alt="">
+                    </section>
+                    <section class="name-producto">Intel Core i5-9400F [BX80684I59400F]</section>
+                    <section class="precio-producto">$150.900</section>
+                </a>
+                <a class="short-description-product" href="./GEAR.htm">
+                    <section class="img-container">
+                        <img class="img-slider"
+                            src="https://publicapi.solotodo.com/products/74608/picture/?width=300&height=200"
+                            alt="">
+                    </section>
+                    <section class="name-producto">Gear G2450M (M2559P)</section>
+                    <section class="desc-producto">LED 25.0" Full HD (1920x1080)</section>
+                    <section class="precio-producto">$189.990</section>
+                </a>
+                <a class="short-description-product" href="./ASUS.htm">
+                    <section class="img-container">
+                        <img class="img-slider"
+                            src="https://publicapi.solotodo.com/products/75940/picture/?width=300&height=200"
+                            alt="">
+                    </section>
+                    <section class="name-producto">ASUS VP249QGR</section>
+                    <section class="desc-producto">LED 24.0" Full HD (1920x1080)</section>
+                    <section class="precio-producto">$209.900</section>
+                </a>
+                <a class="short-description-product" href="./HPPAVILLON.htm">
+                    <section class="img-container">
+                        <img class="img-slider"
+                            src="https://publicapi.solotodo.com/products/84901/picture/?width=300&height=200"
+                            alt="">
+                    </section>
+                    <section class="name-producto">HP Pavilion Gaming 16-A0001LA [165G0LA]</section>
+                    <section class="desc-producto">Intel Core i5-10300H / 8 GB RAM / NVIDIA GeForce GTX 1650 (4 GB)
+                    </section>
+                    <section class="precio-producto">$749.990</section>
+                </a>
+                <a class="short-description-product" href="./ACER.htm">
+                    <section class="img-container">
+                        <img class="img-slider"
+                            src="https://publicapi.solotodo.com/products/82229/picture/?width=300&height=200"
+                            alt="">
+                    </section>
+                    <section class="name-producto">Acer Nitro 5 AN515-54-59UV-1</section>
+                    <section class="desc-producto">Intel Core i5-9300H / 8 GB RAM / NVIDIA GeForce GTX 1650 (4 GB)
+                    </section>
+                    <section class="precio-producto">$708.090</section>
+                </a>
+                <a class="short-description-product" href="./AZZA.htm">
+                    <section class="img-container">
+                        <img class="img-slider"
+                            src="https://publicapi.solotodo.com/products/70185/picture/?width=300&height=200"
+                            alt="">
+                    </section>
+                    <section class="name-producto">Azza Luminous 110F (CSAZ-110F)</section>
+                    <section class="precio-producto">$184.990</section>
+                </a>
+                <a class="short-description-product" href="./ASUSTUF.htm">
+                    <section class="img-container">
+                        <img class="img-slider"
+                            src="https://publicapi.solotodo.com/products/81883/picture/?width=300&height=200"
+                            alt="">
+                    </section>
+                    <section class="name-producto">ASUS TUF FX505DT-BQ404T [90NR02D2-M09800]</section>
+                    <section class="desc-producto">AMD Ryzen 5 3550H / 8 GB RAM / NVIDIA GeForce</section>
+                    <section class="precio-producto">$630.490</section>
+                </a> -->
+            {% endfor %}
         </section>
     </section>
     <section class="arrows">
