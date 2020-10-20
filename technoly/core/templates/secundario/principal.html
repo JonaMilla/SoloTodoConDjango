@@ -1,24 +1,13 @@
 {% extends "core/base.html" %}
 
 {% block content %}
-<!-- {{projects}} -->
+
 <h1 class="title">Lo más visto de SoloTodo</h1>
 <section class="global col s12">
     <section class="global-page">
         <section class="slider-tec">
             {% for project in projects  %}
 
-                <!-- <a class="short-description-product" href="{% url 'productoAOC' %}">
-                    <section class="img-container">
-                        <img class="img-slider"
-                            src="https://publicapi.solotodo.com/products/69359/picture/?width=300&height=200"
-                            alt="">
-                    </section>
-                    <section class="name-producto">AOC C24G1</section>
-                    <section class="desc-producto">LED 24.0" Full HD (1920X1080)</section>
-                    <section class="precio-producto">$184.990</section>
-                    https://publicapi.solotodo.com/products/69359/picture/?width=300&height=200
-                </a> -->
                 <a class="short-description-product" href="{% url 'productoAOC' %}">
                     <section class="img-container">
                         <img class="img-slider"                    
@@ -29,16 +18,6 @@
                     <section class="desc-producto">{{ project.description }}</section>
                     <section class="precio-producto">${{ project.precio }}</section>
                 </a>
-                <!-- <a class="short-description-product" href="./COOLER.htm">
-                    <section class="img-container">
-                        <img class="img-slider"
-                            src="https://publicapi.solotodo.com/products/86265/picture/?width=300&height=200"
-                            alt="">
-                    </section>
-                    <section class="name-producto">Cooler Master MasterBox MB320L ARGB (MCB-B320L-KGNN-S02)
-                    </section>
-                    <section class="precio-producto">$63.990</section>
-                </a> -->
                 <!-- <a class="short-description-product" href="./INTELI5.htm">
                     <section class="img-container">
                         <img class="img-slider"

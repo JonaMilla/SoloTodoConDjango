@@ -4,8 +4,8 @@ from django.db import models
 
 class Project(models.Model):
     name = models.CharField(max_length=100, null=False, blank= False, verbose_name="Nombre")
-    description = models.TextField(verbose_name="Descripción")
-    precio = models.PositiveIntegerField(verbose_name="Precio")
+    description = models.TextField(null=True, blank=True, verbose_name="Descripción")
+    precio = models.CharField(max_length=15, verbose_name="Precio")
     imagen = models.ImageField(verbose_name="Imagen", upload_to = "projects")
     created = models.DateTimeField(auto_now_add=True,verbose_name="Fecha de creación")
     updated = models.DateTimeField(auto_now=True,verbose_name="Fecha de edición")
