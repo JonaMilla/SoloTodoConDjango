@@ -1,0 +1,13 @@
+{% extends "baseLogin.html" %}
+
+{% block title %}Registro{% endblock title %}
+
+{% block content %}
+
+    <form action="" method="POST" autocomplete="off">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit" class="btn btn-success">Crear cuenta</button>
+    </form>  
+
+{% endblock content %}

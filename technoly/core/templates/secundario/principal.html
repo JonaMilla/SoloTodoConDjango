@@ -8,7 +8,7 @@
         <section class="slider-tec">
             {% for project in projects  %}
 
-                <a class="short-description-product" href="{% url 'productoAOC' %}">
+                <a class="short-description-product" href="{% url 'producto' id_producto=project.id %}">
                     <section class="img-container">
                         <img class="img-slider"                    
                             src="{{ project.imagen.url }}"

@@ -7,16 +7,15 @@
 {% endblock head %}
 
 {% block content %}
-<!-- {{projects}} -->
 <main id="panel" class="row">
     <div class="col s12">
         <a id="a-panel" href="#">Monitores <span>/AOC C24G1</span></a>
     </div>
 </main>
-<h1 class="mb">AOC C24G1</h1>
+<h1 class="mb">{{producto.name}}</h1>
 <main id="cnt">
     <div id="img-pro">
-        <img class="materialboxed" src="https://publicapi.solotodo.com/products/69359/picture/?width=1000&height=520">
+        <img class="materialboxed" src="{{producto.imagen.url}}">
     </div>
 
     <section id="panel-cara">

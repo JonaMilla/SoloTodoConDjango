@@ -17,11 +17,15 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from producto import views
+# from autenticacion import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('core.urls')),
-    path('producto/',views.producto, name='productoAOC')
+    path('cuenta/', include('autenticacion.urls')),
+    #path('producto/',views.producto, name='productoAOC'),
+    path('producto/<int:id_producto>',views.producto, name='producto'),
+    #path('producto/<int:id_producto>',views.registro, name='registro'),
 ]
 
 if settings.DEBUG:

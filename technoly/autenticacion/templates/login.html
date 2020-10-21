@@ -1,0 +1,11 @@
+{% extends "baseLogin.html" %}
+
+{% block title %}Login{% endblock title %}
+
+{% block content %}
+    <form action="" method="POST" class="mt-2" autocomplete="off">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit" class="btn btn-success">Iniciar sesión</button>
+    </form>  
+{% endblock content %}
