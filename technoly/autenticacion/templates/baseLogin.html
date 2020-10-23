@@ -14,7 +14,7 @@
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- MI ESTILOS -->
-    <link rel="stylesheet" href="{% static "core/css/style.css" %}">
+    <link rel="stylesheet" href="{% static "core/css/login.css" %}">
     <!-- font awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
 </head>
@@ -24,19 +24,21 @@
     <!-- MENÚ DE NAVEGACIÓN-DESPLEGABLE CON MATERIALIZECSS -->
     <header>
         <nav class="row">
-            <div class="nav-wrapper">
-                <a href="{% url 'home' %}"><img width="170px" src="https://www.solotodo.cl/static/logo.svg" alt=""
-                        class="img-nav"></a>  
-                <ul id="nav-mobile" class="right hide-on-med-and-down">          
-                {% if user.is_authenticated %}
-                    <li><a href="#">Bienvenido: {{ user.username }}</li>
-                    <li><a href="{% url 'salir' %}">Cerrar sesión</a></li>
-                {% else %}
-                    <li><a href="{% url 'login' %}">Login</a></li>
-                    <li><a href="{% url 'registro' %}">Registrarme</a></li>
-                {% endif %}
-                </ul>
-            </div>
+            <section id="menu-navegacion" class="nav-wrapper col s12">
+                <div class="nav-wrapper">
+                    <a href="{% url 'home' %}"><img width="170px" src="https://www.solotodo.cl/static/logo.svg"
+                        alt="" class="img-nav"></a>
+                    <ul id="show-menu" class="ul-nav hide-on-sma-and-down">                       
+                        {% if user.is_authenticated %}
+                        <li><a href="#">Bienvenido: {{ user.username }}</li>
+                        <li><a href="{% url 'salir' %}">Cerrar sesión</a></li>
+                        {% else %}
+                        <li><a class="dropdown-trigger" href="{% url 'login' %}">Login</a></li>
+                        <li><a class="dropdown-trigger" href="{% url 'registro' %}">Registrarme</a></li>
+                        {% endif %}                       
+                    </ul>
+                </div>
+            </section>
         </nav>
         <!-- ICON MENU -->
         <section id="icon-menu">
@@ -44,58 +46,23 @@
         </section>
     </header>
 
-    <div class="container mt-3">
-        {% if messages %}
-        <div class="row mt-3 bt-3">
-            <div class="col-12">
-                {% for message in messages %}
-                <div class="alert alert-{{ message.tags }}">
-                    {{ message }}
+    <main class="container-all" id="move-content">
+        <div class="container">
+            {% if messages %}
+            <div class="row mt-3 bt-3">
+                <div class="col-12">
+                    {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }}">
+                        {{ message }}
+                    </div>
+                    {% endfor %}
                 </div>
-                {% endfor %}
             </div>
+            {% endif %}
+
+            {% block content %}{% endblock content %}
         </div>
-        {% endif %}
-
-        {% block content %}{% endblock content %}
-    </div>
-
-    <footer>
-        <section id="foo-1">
-            <h5 class="white-text">Acerca de solo todo</h5>
-            <hr>
-            <p class="grey-text text-lighten-3">Nuestra misión es ayudar a los consumidores a escoger el producto
-                perfecto para sus necesidades y presupuesto.</p>
-            <a id="foo-a" class="grey-text text-lighten-3" href="#/">Términos y condiciones</a>
-        </section>
-
-        <section id="foo-2">
-            <h5 class="white-text">Apariciones en los medios</h5>
-            <hr>
-            <ul>
-                <p class="grey-text text-lighten-3">
-                    <img src="https://www.solotodo.cl/static/press-lun.jpg" alt="" class="responsive-img"> "Ofrece
-                    el llamativo servicio de regatear y encontrar el precio más conveniente de notebooks"</p>
-            </ul>
-            <ul>
-                <p class="grey-text text-lighten-3">
-                    <img src="https://www.solotodo.cl/static/press-c13.png" alt="" class="circle responsive-img">
-                    "Una cotización podía tomar horas buscando y ahora se reduce a minutos"</p>
-            </ul>
-        </section>
-
-        <section id="foo-3">
-            <h5 class="white-text">Contacto</h5>
-            <hr>
-            <ul>
-                <li>
-                    <p class="grey-text text-lighten-3">SoloNotebooks EIRL <br> Santiago - Chile</p>
-                </li>
-                <li><a id="foo-con" href="#/"><span class="grey-text text-lighten-3">Contáctanos vía web</span></a>
-                </li>
-            </ul>
-        </section>
-    </footer>
+    </main>
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

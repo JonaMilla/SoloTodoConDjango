@@ -3,9 +3,20 @@
 {% block title %}Login{% endblock title %}
 
 {% block content %}
-    <form action="" method="POST" class="mt-2" autocomplete="off">
-        {% csrf_token %}
-        {{ form }}
-        <button type="submit" class="btn btn-success">Iniciar sesión</button>
-    </form>  
+<div class="row login">
+<div class="col s12 l6 offset-l3">
+    <main class="card">
+        <section class="card-action blue darken-4 white-text">
+            <h5>Login SoloTodo</h5>
+        </section>
+        <section class="card-content">
+            <form class="form-field" action="" method="POST" class="mt-2" autocomplete="off">
+                {% csrf_token %}
+                {{ form }}
+                <button class="btn-small blue darken-4 white-text waves-effect waves-light ">Iniciar sesión</button>
+            </form> 
+        </section> 
+    </main>
+</div>
+</div>
 {% endblock content %}

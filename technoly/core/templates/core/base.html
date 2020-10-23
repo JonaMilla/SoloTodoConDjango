@@ -19,11 +19,11 @@
                     <li><a class="dropdown-trigger" data-target="dropdown2" href="#">Hardware</a></li>
                     <li><a class="dropdown-trigger" data-target="dropdown3" href="#">Electro</a></li>
                     {% if user.is_authenticated %}
-                        <li><p>Bienvenido: {{ user.username }}</p></li>
-                        <li><a class="" href="{% url 'salir' %}" >Cerrar sesión</a></li>
+                        <li><p class="dropdown-trigger">Bienvenido: {{ user.username }}</p></li>
+                        <li><a class="dropdown-trigger" href="{% url 'salir' %}" >Cerrar sesión</a></li>
                     {% else %}
-                        <li><a class="" href="{% url 'login' %}" class="nav-link">Login</a></li>
-                        <li><a class="" href="{% url 'registro' %}" class="nav-link">Registrarme</a></li>
+                        <li><a class="dropdown-trigger" href="{% url 'login' %}" class="nav-link">Login</a></li>
+                        <li><a class="dropdown-trigger" href="{% url 'registro' %}" class="nav-link">Registrarme</a></li>
                     {% endif %}
                 </ul>
 
