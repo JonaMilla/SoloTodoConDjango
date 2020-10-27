@@ -1,8 +1,11 @@
 from django.shortcuts import render, redirect
-from django.views.generic import View
+# from django.views.generic import View
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib import messages
 from django.contrib.auth import login as auth_login, logout, authenticate
+from .forms import FormCreacionUsuario, FormCreacionPerfil
+from .models import Genero, PerfilUser
+from django.contrib.auth.models import User 
 
 
 def login(request):
@@ -24,7 +27,7 @@ def login(request):
     form = AuthenticationForm() 
     return render(request, "login.html", {"form": form})
 
-class vistaRegistro(View):
+#class vistaRegistro(View):
 
     def get(self, request):
         form = UserCreationForm()
@@ -54,6 +57,31 @@ class vistaRegistro(View):
                 {
                     "form": form
                 })
+
+def registroUsuario(request):
+    formulario = FormCreacionUsuario()
+    formulario2 = FormCreacionPerfil()
+    if request.method == 'POST':
+        formulario = FormCreacionUsuario(request.POST)
+        formulario2 = FormCreacionPerfil(request.POST)
+        if formulario.is_valid() and formulario2.is_valid():
+            usuario = formulario.save()
+            perfil = formulario2.save(commit=False)
+            perfil.usuario = usuario
+            perfil.save()
+            messages.add_message(request,
+                messages.INFO,
+                'Registrado exitosamente')
+            return redirect('home')
+    context = {
+        'formulario': formulario,
+        'formulario2': formulario2
+    }
+    return render(
+        request, 
+        'registro.html',
+        context
+    )
 
 def salir(request):
     logout(request)

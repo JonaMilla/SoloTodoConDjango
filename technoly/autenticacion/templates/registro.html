@@ -4,9 +4,13 @@
 
 {% block content %}
 
+    {% if formulario.error %}
+        {{ formulario.error }}
+    {% endif %}
     <form action="" method="POST" autocomplete="off">
         {% csrf_token %}
-        {{ form }}
+        {{ formulario }}
+        {{ formulario2 }}
         <button type="submit" class="btn btn-success">Crear cuenta</button>
     </form>  
 
