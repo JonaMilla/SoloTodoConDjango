@@ -20,7 +20,8 @@ from producto import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('core.urls')),
+    path('home/', views.home, name='home'),
+    path('agregar/', views.agregarProducto, name='agregarProducto'),  
     path('', include('autenticacion.urls')),
     path('producto/<int:id_producto>',views.producto, name='producto'), 
 ]

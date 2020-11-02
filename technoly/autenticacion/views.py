@@ -1,31 +1,36 @@
 from django.shortcuts import render, redirect
-# from django.views.generic import View
-from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 from django.contrib.auth import login as auth_login, logout, authenticate
-from .forms import FormCreacionUsuario, FormCreacionPerfil
+from .forms import FormCreacionUsuario, FormCreacionPerfil, FormIniciarSesion
 from .models import Genero, PerfilUser
 from django.contrib.auth.models import User 
 
 
 def login(request):
+    form = FormIniciarSesion()
     if request.method == "POST":
-        form = AuthenticationForm(request, data=request.POST)
+        form = FormIniciarSesion(data=request.POST)
         if form.is_valid():
             nombre_usuario = form.cleaned_data.get("username")
             password = form.cleaned_data.get("password")
             usuario = authenticate(username=nombre_usuario, password=password)
             if usuario is not None:
+                messages.add_message(request,
+                    messages.SUCCESS,
+                    'Bienvenido(a) nuevamente {}'.format(usuario.get_username())
+                )
                 auth_login(request, usuario)
-                #messages.success(request, F"Bienvenido(a) nuevamente {nombre_usuario}")
                 return redirect("home")
-            else:
-                messages.error(request, "Los datos son incorrectos")
-        else:
-            messages.error(request, "Los datos son incorrectos")
+    context = {
+        "form": form
+    }
 
-    form = AuthenticationForm() 
-    return render(request, "login.html", {"form": form})
+    return render(
+        request,
+        "login.html", 
+        context
+    )
 
 #class vistaRegistro(View):
 

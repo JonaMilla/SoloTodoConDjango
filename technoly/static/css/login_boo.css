@@ -1,0 +1,19 @@
+body{
+    background-color: #000;
+}
+
+.navbar{
+    background: #315e85;
+    height: 70px;
+}
+
+.nav-link{
+    color: #fff !important;
+    font-size: 20px;
+    font-weight: bold;
+    font: sans-serif;
+}
+
+.card{
+    background-color: #000 !important;
+}

@@ -1,17 +1,33 @@
-{% extends "baseLogin.html" %}
+{% extends "base/base_login.html" %}
 
 {% block title %}Registro{% endblock title %}
 
-{% block content %}
-
-    {% if formulario.error %}
-        {{ formulario.error }}
-    {% endif %}
-    <form action="" method="POST" autocomplete="off">
-        {% csrf_token %}
-        {{ formulario }}
-        {{ formulario2 }}
-        <button type="submit" class="btn btn-success">Crear cuenta</button>
-    </form>  
-
-{% endblock content %}
+{% block main %}
+<div class="row">
+    <section class="card col-sm-12 col-md-4 mx-auto mt-4">
+        <article class="card-header">
+            <h5 class="card-title">Registro de usuario</h5>
+        </article>
+        <form action="" method="POST" autocomplete="off">
+            {% csrf_token %}
+            <article class="card-body">
+                {% for campo in formulario %}
+                <div class="form-group">
+                    <label for="{{ campo.id_for_label }}">{{ campo.label }}</label>
+                    {{ campo }}
+                </div>
+                    {% if campo.errors %}
+                        {% for error in campo.errors %}
+                            <small id="emailHelp" class="form-text text-muted">{{ error }}</small>
+                        {% endfor %}
+                    {% endif %}
+                {% endfor %}
+                {{ formulario2 }}
+            </article>
+            <article class="card-footer">
+                <input type="submit" class="btn btn-outline-success" value="Crear registro">
+            </article>
+        </form>
+    </section>
+</div>
+{% endblock main %}

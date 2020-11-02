@@ -1,0 +1,402 @@
+{% extends "base/base.html" %}
+
+{% block content %}
+
+<h1 class="title">Lo más visto de SoloTodo</h1>
+<section class="global col s12">
+    <section class="global-page">
+        <section class="slider-tec">
+            {% if projects %}
+                {% for project in projects  %}
+                    <a class="short-description-product" href="{% url 'producto' id_producto=project.id %}">
+                    <section class="img-container">
+                        <img class="img-slider"                    
+                            src="{{ project.imagen.url }}"
+                            alt="">
+                    </section>
+                    <section class="name-producto">{{ project.name }}</section>
+                    <section class="desc-producto">{{ project.description }}</section>
+                    <section class="precio-producto">${{ project.precio }}</section>
+                    </a>
+                {% endfor %}
+            {% endif %}
+            
+        </section>
+    </section>
+    <section class="arrows">
+        <i id="arrow-prev" class="material-icons">arrow_back</i>
+        <i id="arrow-next" class="material-icons">arrow_forward</i>
+    </section>
+</section>
+<!-- MENÚ DE IMÁGENES-2(carousel) CON SLICK -->
+<h1 class="title">Ofertas del día</h1>
+<section class="global col 12">
+    <section class="global-page">
+        <section class="slider-tec2">
+            <a class="short-description-product2" href="./LenovoThinkPadT495.htm">
+                <section class="img-container">
+                    <img class="img-slider"
+                        src="https://publicapi.solotodo.com/products/65491/picture/?width=300&height=200"
+                        alt="">
+                </section>
+                <section class="name-producto">Lenovo ThinkPad T495s [20QKA008CL]</section>
+                <section class="desc-producto">AMD Ryzen 7 3700U / 16 GB RAM</section>
+                <section class="precio-producto">$990.990</section>
+            </a>
+            <a class="short-description-product2" href="./SamsungGalaxyWatch3Bluetooth41mm.htm">
+                <section class="img-container">
+                    <img class="img-slider"
+                        src="https://publicapi.solotodo.com/products/86510/picture/?width=300&height=200"
+                        alt="">
+                </section>
+                <section class="name-producto">Samsung Galaxy Watch3 Bluetooth 41mm - Mystic Bronze
+                    (SM-R850NZDALTA) + Audífonos Samsung Galaxy Buds Black</section>
+                <section class="precio-producto">$359.990</section>
+            </a>
+            <a class="short-description-product2" href="./WhirlpoolWRM56ABDWC.htm">
+                <section class="img-container">
+                    <img class="img-slider"
+                        src="https://publicapi.solotodo.com/products/79673/picture/?width=300&height=200"
+                        alt="">
+                </section>
+                <section class="name-producto">Whirlpool WRM56ABDWC</section>
+                <section class="desc-producto">Refrigerador top freezer No Frost</section>
+                <section class="precio-producto">$589.900</section>
+            </a>
+            <a class="short-description-product2" href="./LenovoThinkPadT490.htm">
+                <section class="img-container">
+                    <img class="img-slider"
+                        src="https://publicapi.solotodo.com/products/68189/picture/?width=300&height=200"
+                        alt="">
+                </section>
+                <section class="name-producto">Lenovo ThinkPad T490 [20N3S0DK00]</section>
+                <section class="desc-producto">Intel Core i7-8565U / 8 GB RAM / NVIDIA GeForce MX250 (2 GB)
+                </section>
+                <section class="precio-producto">$929.990</section>
+            </a>
+            <a class="short-description-product2" href="./LenovoThinkPadX390.htm">
+                <section class="img-container">
+                    <img class="img-slider"
+                        src="https://publicapi.solotodo.com/products/67156/picture/?width=300&height=200"
+                        alt="">
+                </section>
+                <section class="name-producto">Lenovo ThinkPad X390 [20Q1S16R00]</section>
+                <section class="desc-producto">Intel Core i7-8565U / 16 GB RAM</section>
+                <section class="precio-producto">$979.900</section>
+            </a>
+            <a class="short-description-product2" href="./LenovoThinkPadP43s[20RHS06R00].htm">
+                <section class="img-container">
+                    <img class="img-slider"
+                        src="https://publicapi.solotodo.com/products/77473/picture/?width=300&height=200"
+                        alt="">
+                </section>
+                <section class="name-producto">Lenovo ThinkPad P43s [20RHS06R00]</section>
+                <section class="desc-producto">Intel Core i7-8565U / 8 GB RAM / NVIDIA Quadro P520 (2 GB)
+                </section>
+                <section class="precio-producto">$1.229.990</section>
+            </a>
+            <a class="short-description-product2" href="./LenovoThinkPadP43s[20RHS02300].htm">
+                <section class="img-container">
+                    <img class="img-slider"
+                        src="https://publicapi.solotodo.com/products/77492/picture/?width=300&height=200"
+                        alt="">
+                </section>
+                <section class="name-producto">Lenovo ThinkPad P43s [20RHS02300]</section>
+                <section class="desc-producto">Intel Core i7-8665U / 16 GB RAM / NVIDIA Quadro P520 (2 GB)
+                </section>
+                <section class="precio-producto">$1.399.090</section>
+            </a>
+            <a class="short-description-product2" href="./LenovoThinkPadX395[20NMA008CL].htm">
+                <section class="img-container">
+                    <img class="img-slider"
+                        src="https://publicapi.solotodo.com/products/64982/picture/?width=300&height=200"
+                        alt="">
+                </section>
+                <section class="name-producto">Lenovo ThinkPad X395 [20NMA008CL]</section>
+                <section class="desc-producto">AMD Ryzen 3 Pro 3300U / 16 GB RAM</section>
+                <section class="precio-producto">$829.990</section>
+            </a>
+            <a class="short-description-product2" href="./WhirlpoolWRM56AKDWC.htm">
+                <section class="img-container">
+                    <img class="img-slider"
+                        src="https://publicapi.solotodo.com/products/79671/picture/?width=300&height=200"
+                        alt="">
+                </section>
+                <section class="name-producto">Whirlpool WRM56AKDWC</section>
+                <section class="desc-producto">Refrigerador top freezer No Frost</section>
+                <section class="precio-producto">$589.900</section>
+            </a>
+        </section>
+    </section>
+    <section class="arrows">
+        <i id="arrow-prev1" class="material-icons">arrow_back</i>
+        <i id="arrow-next2" class="material-icons">arrow_forward</i>
+    </section>
+</section>
+
+<!-- COTIZACIÓN GAMER CON TABS-MATERIALIZECCS -->
+<h4 class="title">Cotizaciones Gamer</h4>
+<section class="row table-cotizaciones">
+    <ul id="tabs-swipe-demo" class=" row tabs col s10 m10 l6">
+        <li class="tab"><a id="btn-ba" href="#test-swipe-1">Básico</a></li>
+        <li class="tab"><a id="btn-ba" href="#test-swipe-2">Medio</a></li>
+        <li class="tab"><a id="btn-ba" href="#test-swipe-3">Alto</a></li>
+        <li class="tab"><a id="btn-ba" href="#test-swipe-4">Avanzado</a></li>
+    </ul>
+    <!-- MENÚ BÁSICO -->
+    <section id="test-swipe-1">
+        <table class="table view-table">
+            <thead>
+                <tr class="titulos-cotizaciones">
+                    <th>Componente</th>
+                    <th>Producto</th>
+                    <th>Tienda</th>
+                    <th>Precio</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="nombre-producto">Tarjetas de video</td>
+                    <td><a href="#/">MSI GeForce GT 1030 2G LP OC</a></td>
+                    <td><a href="#/">PC Express</a></td>
+                    <td class="text-right">N/A</td>
+                </tr>
+                <tr>
+                    <td class="nombre-producto">Procesadores</td>
+                    <td><a href="#">Intel Pentium Gold G5400 [BX80684G5400]</a></td>
+                    <td>N/A</td>
+                    <td class="text-right">N/A</td>
+                </tr>
+                <tr>
+                    <td class="nombre-producto">Placas madre</td>
+                    <td><a href="#/">MSI H310M PRO-VDH PLUS</a></td>
+                    <td>PC Express</td>
+                    <td class="text-right">N/A</td>
+                </tr>
+                <tr>
+                    <td class="nombre-producto">Ram</td>
+                    <td><a href="#/">Crucial CT8G4DFS8266 (1 x 8GB | DIMM DDR4-2666)</a></td>
+                    <td>Winpy</td>
+                    <td class="text-right">N/A</td>
+                </tr>
+                <tr>
+                    <td class="nombre-producto">Discos duros</td>
+                    <td><a href="#/">Western Digital Blue 1 TB (WD10EZEX)</a></td>
+                    <td><a href="#/">PC Factory</a></td>
+                    <td class="text-right">$ 41.990</td>
+                </tr>
+                <tr>
+                    <td class="nombre-producto">Fuentes de poder</td>
+                    <td><a href="#/">EVGA 400W (100-N1-0400-L1) (400 W)</a></td>
+                    <td><a href="#/">Bip</a></td>
+                    <td class="text-right">$ 39.990</td>
+                </tr>
+                <tr>
+                    <td class="nombre-producto">Gabinetes</td>
+                    <td><a href="#/">Gamemax Expedition H605 - Black</a></td>
+                    <td>AllTec</td>
+                    <td class="text-right">N/A</td>
+                </tr>
+                <tr class="btns-price">
+                    <td><a class="btn btn-outline-primary" href="#/">Comentar</a></td>
+                    <td></td>
+                    <td></td>
+                    <td class="total-price text-left">$ 81.980</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <!-- MENÚ MEDIO -->
+    <section id="test-swipe-2">
+        <table class="table view-table">
+            <thead>
+                <tr class="titulos-cotizaciones">
+                    <th>Componente</th>
+                    <th>Producto</th>
+                    <th>Tienda</th>
+                    <th class=" text-right">Precio</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td class="nombre-producto">Tarjetas de video</td>
+                    <td>
+                        <a href="#/"></a>ASUS ROG-STRIX-RX570-O4G-GAMING [90YV0AJ0-M0NA00]</a>
+                    </td>
+                    <td>PC Factory</td>
+                    <td>N/A</td>
+                </tr>
+                <tr>
+                    <td class="nombre-producto">Procesadores</td>
+                    <td><a href="#/">Intel Core i3-9100F [BX80684I39100F]</a></td>
+                    <td><a href="#/">SP Digital</a></td>
+                    <td>$ 99.990</td>
+                </tr>
+                <tr>
+                    <td class="nombre-producto">Placas madre</td>
+                    <td><a href="#/">MSI H310M PRO-VDH PLUS</a></td>
+                    <td>PC Express</td>
+                    <td class="text-right">N/A</td>
+                </tr>
+                <tr>
+                    <td class="nombre-producto">Ram</td>
+                    <td><a href="#/">Crucial CT8G4DFS8266 (1 x 8GB | DIMM DDR4-2666)</a></td>
+                    <td>Winpy</td>
+                    <td class="text-right">N/A</td>
+                </tr>
+                <tr>
+                    <td class="nombre-producto">Discos duros</td>
+                    <td><a href="#/">Western Digital Blue 1 TB (WD10EZEX)</a></td>
+                    <td><a href="#/">SP Digital</a></td>
+                    <td class="text-right">$ 41.980</td>
+                </tr>
+                <tr>
+                    <td class="nombre-producto">Fuentes de poder</td>
+                    <td><a href="#/">EVGA 500 W1 (100-W1-0500-KR) (500 W)</a></td>
+                    <td>SP Digital</td>
+                    <td class="text-right">N/A</td>
+                </tr>
+                <tr>
+                    <td class="nombre-producto">Gabinetes</td>
+                    <td><a href="#/">Gamemax Expedition H605 - Black</a></td>
+                    <td>AllTec</td>
+                    <td class="text-right">N/A</td>
+                </tr>
+                <tr>
+                    <td class="nombre-producto">Unidades de Estado Sólido</td>
+                    <td><a href="#/">Western Digital Green 240 GB (WDS240G2G0A)</a></td>
+                    <td><a href="#/">SP Digital</a></td>
+                    <td class="text-right">$ 31.990</td>
+                </tr>
+                <tr>
+                    <td><a class="btn btn-outline-primary" href="#/">Comentar</a></td>
+                    <td class="total-price text-left">$ 173.960</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <!-- MENÚ ALTO -->
+    <section id="test-swipe-3">
+        <table class="table view-table">
+            <thead>
+                <tr class="titulos-cotizaciones">
+                    <th>Componente</th>
+                    <th>Producto</th>
+                    <th>Tienda</th>
+                    <th class="price-column text-right">Precio</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="nombre-producto">Tarjetas de video</td>
+                    <td><a href="#/">Zotac GAMING GeForce GTX 1660 SUPER Twin Fan [ZT-T16620F-10L]</a></td>
+                    <td>SP Digital</td>
+                    <td class="text-right">N/A</td>
+                </tr>
+                <tr>
+                    <td class="nombre-producto">Procesadores</td>
+                    <td><a href="#/">Intel Core i5-9400F [BX80684I59400F]</a></td>
+                    <td><a href="#/">SP Digital</a></td>
+                    <td class="text-right">$ 169.990</td>
+                </tr>
+                <tr>
+                    <td class="nombre-producto">Placas madre</td>
+                    <td><a href="#/">MSI B365M PRO-VH</a></td>
+                    <td>N/A</td>
+                    <td class="text-right">N/A</td>
+                </tr>
+                <tr>
+                    <td class="nombre-producto">Ram</td>
+                    <td><a href="#/">Crucial CT8G4DFS8266 (1 x 8GB | DIMM DDR4-2666)</a></td>
+                    <td><a href="#/">SP Digital</a></td>
+                    <td class="text-right">$ 39.990</td>
+                </tr>
+                <tr>
+                    <td class="nombre-producto">Fuentes de poder</td>
+                    <td><a href="#/">EVGA 500 W1 (100-W1-0500-KR) (500 W)</a></td>
+                    <td>SP Digital</td>
+                    <td class="text-right">N/A</td>
+                </tr>
+                <tr>
+                    <td class="nombre-producto">Gabinetes</td>
+                    <td><a href="#/">Fantech Pulse CG71 RGB - Black</a></td>
+                    <td>Proglobal</td>
+                    <td class="text-right">N/A</td>
+                </tr>
+                <tr>
+                    <td class="nombre-producto">Unidades de Estado Sólido</td>
+                    <td><a href="#/">Crucial MX500 500 GB (CT500MX500SSD4)</a></td>
+                    <td>SP Digital</td>
+                    <td class="text-right">N/A</td>
+                </tr>
+                <tr>
+                    <td><a class="btn btn-outline-primary" href="#/">Comentar</a></td>
+                    <td class="total-price text-left">$ 209.980</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <!-- MENÚ AVANZADO -->
+    <section id="test-swipe-4">
+        <table class="table view-table">
+            <thead>
+                <tr class="titulos-cotizaciones">
+                    <th>Componente</th>
+                    <th>Producto</th>
+                    <th>Tienda</th>
+                    <th>Precio</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="nombre-producto">Tarjetas de video</td>
+                    <td><a href="#/">Zotac GAMING GeForce RTX 2060 SUPER MINI [ZT-T20610E-10M]</a></td>
+                    <td>TopPC</td>
+                    <td class="text-right">N/A</td>
+                </tr>
+                <tr>
+                    <td class="nombre-producto">Procesadores</td>
+                    <td><a href="#/">Intel Core i5-9400F [BX80684I59400F]</a></td>
+                    <td><a href=>PC Express</a></td>
+                    <td class="text-right">$ 153.900</td>
+                </tr>
+                <tr>
+                    <td class="nombre-producto">Placas madre</td>
+                    <td><a href="#/">MSI B365M PRO-VH</a></td>
+                    <td>TopPC</td>
+                    <td class="text-right">N/A</td>
+                </tr>
+                <tr>
+                    <td class="nombre-producto">Ram</td>
+                    <td><a href="#/">Crucial CT8G4DFS8266 (1 x 8GB | DIMM DDR4-2666)</a></td>
+                    <td>PC Express</td>
+                    <td class="text-right">N/A</td>
+                </tr>
+                <tr>
+                    <td class="nombre-producto">Fuentes de poder</td>
+                    <td><a href="#/">EVGA 500 W1 (100-W1-0500-KR) (500 W)</a></td>
+                    <td>N/A</td>
+                    <td class="text-right">N/A</td>
+                </tr>
+                <tr>
+                    <td class="nombre-producto">Gabinetes</td>
+                    <td><a href="#/">Fantech Pulse CG71 RGB - Black</a></td>
+                    <td>Proglobal</td>
+                    <td class="text-right">N/A</td>
+                </tr>
+                <tr>
+                    <td>Unidades de Estado Sólido</td>
+                    <td><a href="#/">Crucial P1 1 TB (CT1000P1SSD8)</a></td>
+                    <td>Winpy</td>
+                    <td class="text-right">N/A</td>
+                </tr>
+                <tr>
+                    <td><a class="btn btn-outline-primary" href="#/">Comentar</a></td>
+                    <td class="total-price text-left">$ 153.900</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</section>
+{% endblock content %}

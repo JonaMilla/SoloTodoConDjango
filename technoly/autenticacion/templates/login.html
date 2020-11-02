@@ -1,22 +1,32 @@
-{% extends "baseLogin.html" %}
+{% extends "base/base_login.html" %}
 
 {% block title %}Login{% endblock title %}
 
-{% block content %}
-<div class="row login">
-<div class="col s12 l6 offset-l3">
-    <main class="card">
-        <section class="card-action blue darken-4 white-text">
-            <h5>Login SoloTodo</h5>
-        </section>
-        <section class="card-content">
-            <form class="form-field" action="" method="POST" class="mt-2" autocomplete="off">
-                {% csrf_token %}
-                {{ form }}
-                <button class="btn-small blue darken-4 white-text waves-effect waves-light ">Iniciar sesión</button>
-            </form> 
-        </section> 
-    </main>
+{% block main %}
+<div class="row">
+    <section class="card col-sm-12 col-md-3 mx-auto mt-5">
+        <article class="card-header">
+            <h5 class="card-title">Iniciar sesión</h5>
+        </article>
+        <form action="" method="POST" autocomplete="off">
+            {% csrf_token %}
+            <article class="card-body">
+                {% for campo in form %}
+                <div class="form-group">
+                    <label for="{{ campo.id_for_label }}">{{ campo.label }}</label>
+                    {{ campo }}
+                    {% if campo.errors %}
+                        {% for error in campo.errors %}
+                            <small id="{{ campo.id_for_label }}" class="form-text text-muted">{{ error }}</small>
+                        {% endfor %}
+                    {% endif %}
+                {% endfor %}
+                </div>                   
+            </article>
+            <article class="card-footer">
+                <input type="submit" class="btn btn-outline-success btn-block" value="Iniciar sesión">
+            </article>
+        </form>
+    </section>
 </div>
-</div>
-{% endblock content %}
+{% endblock main %}

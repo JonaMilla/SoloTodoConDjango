@@ -1,0 +1,34 @@
+<nav class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand" href="{% url 'home' %}"><img width="170px" src="https://www.solotodo.cl/static/logo.svg"
+            alt="" class="img-nav"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Bienvenido: {{ user.username }}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'salir' %}">Cerrar sesión</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'agregarProducto' %}">Agregar Producto</a>
+                </li>
+            {% else %}
+                <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Iniciar sesión</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'registro' %}">Registrarme</a></li>
+            {% endif %}
+        </ul>
+    </div>
+</nav>
+{% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }}" role="alert">
+        <h4 class="alert-heading">Solo todo</h4>
+        <p>{{ message }}</p>
+    </div>
+    {% endfor %}
+{% endif %}
