@@ -4,7 +4,7 @@ from .models import Project
 from .forms import FormProject
 from django.contrib.auth.decorators import login_required
 
-#@login_required(login_url='/cuenta/login')
+@login_required(login_url='/')
 def home(request):
     projects = Project.objects.all()
     return render(
@@ -30,7 +30,7 @@ def agregarProducto(request):
             nuevoFormulario = formulario.save(commit=False)
             nuevoFormulario.usuario = request.user
             nuevoFormulario.save()
-            return redirect('principal.html')
+            return redirect('/home/')
     context = {
         'formulario': formulario
     }

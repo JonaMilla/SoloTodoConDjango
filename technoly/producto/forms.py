@@ -1,7 +1,14 @@
 from django import forms
 from .models  import Project
 
+def agregarClaseFormControl(elementos):
+    for campo in elementos:
+            campo.field.widget.attrs['class'] = 'form-control'
 class FormProject(forms.ModelForm):
+
+    def __init__(self, *args, **kwargs):
+        super(FormProject, self).__init__(*args, **kwargs)
+        agregarClaseFormControl(self.visible_fields())
     class Meta:
         model = Project
         fields = (

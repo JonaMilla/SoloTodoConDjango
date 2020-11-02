@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
 $(function() {
         $('.slider-tec').slick({
             infinite: true,
-            slidesToShow: 4,
+            slidesToShow: 3,
             slidesToScroll: 1,
             prevArrow: $('#arrow-prev'),
             nextArrow: $('#arrow-next'),
