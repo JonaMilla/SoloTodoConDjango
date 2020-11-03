@@ -1,10 +1,8 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="es-cl">
-    
 {% include "base/head.html" %}
 {% block head %}
+    
 {% endblock head %}
+
 <body>
     <!-- MENÚ DE NAVEGACIÓN-DESPLEGABLE CON MATERIALIZECSS -->
     <header>
@@ -96,9 +94,7 @@
 
         {% endblock content %}        
     </main>
-    {% include "base/script.html" %}
-    {% block script %}
-    {% endblock script %}
-</body>
 
+{% include "base/script.html" %}
+</body>
 </html>

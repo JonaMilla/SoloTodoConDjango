@@ -3,9 +3,11 @@ from django.shortcuts import redirect, render
 from .models import Project
 from .forms import FormProject
 from django.contrib.auth.decorators import login_required
+from .carrito import Carro
 
 @login_required(login_url='/')
 def home(request):
+    carro = Carro(request)
     projects = Project.objects.all()
     return render(
         request,
@@ -13,6 +15,7 @@ def home(request):
         {'projects':projects}
     )
 
+@login_required(login_url='/')
 def producto(request, id_producto):
     producto = Project.objects.get(pk=id_producto)
     return render(
@@ -22,6 +25,7 @@ def producto(request, id_producto):
         'producto': producto},              
     )
 
+@login_required(login_url='/')
 def agregarProducto(request):
     formulario = FormProject()
     if request.method == 'POST':
@@ -40,3 +44,37 @@ def agregarProducto(request):
         context
     )
 
+
+#carrito
+@login_required(login_url='/')
+def agregarProductoCarro(request, id_producto):
+    carro = Carro(request)
+    project = Project.objects.get(id=id_producto)
+    carro.agregar(project=project)
+    return redirect('/home/')
+
+
+@login_required(login_url='/')
+def eliminarProductoCarro(request, id_producto):
+    carro = Carro(request)
+    project = Project.objects.get(id=id_producto)
+    carro.eliminar(project)
+    return redirect('/home/')
+
+
+@login_required(login_url='/')
+def decrementarProductoCarro(request, id_producto):
+    carro = Carro(request)
+    project = Project.objects.get(id=id_producto)
+    carro.decrementar(project=project)
+    return redirect('/home/')
+
+
+@login_required(login_url='/')
+def limpiarProductoCarro(request):
+    carro = Carro(request)
+    carro.limpiarCarro()
+    return redirect('/home/')
+
+def celular(request):
+    return redirect('galeria_carro/celulares.html')
