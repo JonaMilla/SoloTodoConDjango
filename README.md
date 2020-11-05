@@ -9,5 +9,7 @@ Requisitos:
     Python 3.7 - Django  - MySql 5.7
 
 
+Trabajo desarrollado por Jonathan Castro, Cristian Barria, Luis Tapia
+
 Imagenes del proyecto:
 
