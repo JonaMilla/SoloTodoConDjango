@@ -2,7 +2,9 @@
 
 Solo_Todo
 
-El proyecto es SoloTodoConDjango es una prueba de python con html mas especificamente django.
+El proyecto SoloTodoConDjango es una prueba de python con html mas especificamente django.
+
+La pagina puede registrar productos y mostrarlo en el menu.
 
 Requisitos:
 
