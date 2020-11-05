@@ -37,7 +37,7 @@ class Carro:
         for Key, value in self.carro.items():
                 if Key == str(project.id):
                     value["cantidad"] = value["cantidad"] - 1
-                    if value["cantidad"] < 1:
+                    if value["cantidad"] < 0:
                         self.eliminar(project)
                     else:
                         self.guardar()

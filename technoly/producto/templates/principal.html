@@ -30,15 +30,6 @@
                     </div>
                 </div>
             </div>
-            <!-- <a class="short-description-product" href="{% url 'producto' id_producto=project.id %}">
-                <section class="img-container">
-                    <img class="img-slider" src="{{ project.imagen.url }}" alt="">
-                </section>
-                <section class="name-producto">{{ project.name }}</section>
-                <section class="desc-producto">{{ project.description }}</section>
-                <section class="precio-producto">${{ project.precio }}</section>
-                <a class="waves-effect waves-light btn-small">button</a>
-            </a> -->
             {% endfor %}
             {% endif %}
         </section>
@@ -51,19 +42,6 @@
 <div class="container">
     {% include "carrito.html" %}
 </div>
-<!-- <div class="col s6 offset-s6">
-    <div class="card blue-grey darken-1">
-        <div class="card-content white-text">
-            <span class="card-title">Card Title</span>
-            <p>I am a very simple card. I am good at containing small bits of information.
-                I am convenient because I require little markup to use effectively.</p>
-        </div>
-        <div class="card-action">
-            <a href="#">This is a link</a>
-            <a href="#">This is a link</a>
-        </div>
-    </div>
-</div> -->
 <!-- MENÚ DE IMÁGENES-2(carousel) CON SLICK -->
 <h1 class="title">Ofertas del día</h1>
 <section class="global col 12">

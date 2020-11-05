@@ -76,5 +76,5 @@ def limpiarProductoCarro(request):
     carro.limpiarCarro()
     return redirect('/home/')
 
-def celular(request):
-    return redirect('galeria_carro/celulares.html')
+# def celular(request):
+#     return redirect('galeria_carro/celulares.html')
