@@ -17,3 +17,7 @@ Imagenes del proyecto:
 
 ![Imagen login](https://github.com/JonaMilla/SoloTodoConDjango/blob/master/img/Login.jpg?raw=true "Login")
 
+
+
+
+![Imagen login](https://github.com/JonaMilla/SoloTodoConDjango/blob/master/img/Registro.jpg?raw=true "Login")
