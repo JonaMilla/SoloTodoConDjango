@@ -1,12 +1,67 @@
 body {
-        background-image: url("https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260");
+        background-image: url("https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260") !important;
         background-size: cover;
+        background-repeat: no-repeat;
 }
 
-/* .card{
-    background: rgba(0, 0, 0, .9);
+header{
+    width: 100% !important;
+}
+
+#hola {
+    background: rgba(0, 0, 0, .8);
+    border-radius: 44px 44px 44px 44px;
+    -moz-border-radius: 44px 44px 44px 44px;
+    -webkit-border-radius: 44px 44px 44px 44px;
+    border: 0px solid #000000;
+    -webkit-box-shadow: 2px 6px 19px 15px rgba(245,235,245,1);
+    -moz-box-shadow: 2px 6px 19px 15px rgba(245,235,245,1);
+    box-shadow: 2px 6px 19px 15px rgba(245,235,245,1);
+}
+
+label {
+    color: #fff;
+    font-size: 20px;
+}
+
+h5 {
+    color: #fff;
+}
+
+#id_name{
+    background: rgba(0, 0, 0, .8) !important;
+    border: none !important;
+    color: #fff !important;
+    font-size: 18px !important;
+}
+#id_imagen{
+    background: rgba(0, 0, 0, .8) !important;
+    border: none !important;
+    color: #fff !important;
+    font-size: 18px !important;
+}
+
+#id_precio{
+    background: rgba(0, 0, 0, .8) !important;
+    border: none !important;
+    color: #fff !important;
+    font-size: 18px !important;
 }
 
 textarea{
-    background: rgba(0, 0, 0, .9);
-} */
+    height: 50px !important;
+    background: rgba(0, 0, 0, .8) !important;
+    color: #fff !important;
+    font-size: 18px !important;
+}
+
+@media screen and (max-width:1220px) {
+    .form-group{
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    #hola{
+        margin: 25px !important;
+    }
+}

@@ -1,7 +1,7 @@
 {% extends "base/base.html" %}
-
+{% load static %}
 {% block head %}
-
+    <link rel="stylesheet" href="{% static "css/table-cotizaciones.css" %}">
 {% endblock head %}
 
 {% block content %}
@@ -47,7 +47,7 @@
 <section class="global col 12">
     <section class="global-page">
         <section class="slider-tec2">
-            <a class="short-description-product2" href="./LenovoThinkPadT495.htm">
+            <a class="short-description-product2" href="#">
                 <section class="img-container">
                     <img class="img-slider"
                         src="https://publicapi.solotodo.com/products/65491/picture/?width=300&height=200" alt="">
@@ -56,7 +56,7 @@
                 <section class="desc-producto">AMD Ryzen 7 3700U / 16 GB RAM</section>
                 <section class="precio-producto">$990.990</section>
             </a>
-            <a class="short-description-product2" href="./SamsungGalaxyWatch3Bluetooth41mm.htm">
+            <a class="short-description-product2" href="#">
                 <section class="img-container">
                     <img class="img-slider"
                         src="https://publicapi.solotodo.com/products/86510/picture/?width=300&height=200" alt="">
@@ -65,7 +65,7 @@
                     (SM-R850NZDALTA) + Audífonos Samsung Galaxy Buds Black</section>
                 <section class="precio-producto">$359.990</section>
             </a>
-            <a class="short-description-product2" href="./WhirlpoolWRM56ABDWC.htm">
+            <a class="short-description-product2" href="#">
                 <section class="img-container">
                     <img class="img-slider"
                         src="https://publicapi.solotodo.com/products/79673/picture/?width=300&height=200" alt="">
@@ -74,7 +74,7 @@
                 <section class="desc-producto">Refrigerador top freezer No Frost</section>
                 <section class="precio-producto">$589.900</section>
             </a>
-            <a class="short-description-product2" href="./LenovoThinkPadT490.htm">
+            <a class="short-description-product2" href="#">
                 <section class="img-container">
                     <img class="img-slider"
                         src="https://publicapi.solotodo.com/products/68189/picture/?width=300&height=200" alt="">
@@ -84,7 +84,7 @@
                 </section>
                 <section class="precio-producto">$929.990</section>
             </a>
-            <a class="short-description-product2" href="./LenovoThinkPadX390.htm">
+            <a class="short-description-product2" href="#">
                 <section class="img-container">
                     <img class="img-slider"
                         src="https://publicapi.solotodo.com/products/67156/picture/?width=300&height=200" alt="">
@@ -93,7 +93,7 @@
                 <section class="desc-producto">Intel Core i7-8565U / 16 GB RAM</section>
                 <section class="precio-producto">$979.900</section>
             </a>
-            <a class="short-description-product2" href="./LenovoThinkPadP43s[20RHS06R00].htm">
+            <a class="short-description-product2" href="#">
                 <section class="img-container">
                     <img class="img-slider"
                         src="https://publicapi.solotodo.com/products/77473/picture/?width=300&height=200" alt="">
@@ -103,7 +103,7 @@
                 </section>
                 <section class="precio-producto">$1.229.990</section>
             </a>
-            <a class="short-description-product2" href="./LenovoThinkPadP43s[20RHS02300].htm">
+            <a class="short-description-product2" href="#">
                 <section class="img-container">
                     <img class="img-slider"
                         src="https://publicapi.solotodo.com/products/77492/picture/?width=300&height=200" alt="">
@@ -113,7 +113,7 @@
                 </section>
                 <section class="precio-producto">$1.399.090</section>
             </a>
-            <a class="short-description-product2" href="./LenovoThinkPadX395[20NMA008CL].htm">
+            <a class="short-description-product2" href="#">
                 <section class="img-container">
                     <img class="img-slider"
                         src="https://publicapi.solotodo.com/products/64982/picture/?width=300&height=200" alt="">
@@ -122,7 +122,7 @@
                 <section class="desc-producto">AMD Ryzen 3 Pro 3300U / 16 GB RAM</section>
                 <section class="precio-producto">$829.990</section>
             </a>
-            <a class="short-description-product2" href="./WhirlpoolWRM56AKDWC.htm">
+            <a class="short-description-product2" href="#">
                 <section class="img-container">
                     <img class="img-slider"
                         src="https://publicapi.solotodo.com/products/79671/picture/?width=300&height=200" alt="">
@@ -142,7 +142,7 @@
 <!-- COTIZACIÓN GAMER CON TABS-MATERIALIZECCS -->
 <h4 class="title">Cotizaciones Gamer</h4>
 <section class="row table-cotizaciones">
-    <ul id="tabs-swipe-demo" class=" row tabs col s10 m10 l6">
+    <ul id="tabs-swipe-demo" class="row tabs">
         <li class="tab"><a id="btn-ba" href="#test-swipe-1">Básico</a></li>
         <li class="tab"><a id="btn-ba" href="#test-swipe-2">Medio</a></li>
         <li class="tab"><a id="btn-ba" href="#test-swipe-3">Alto</a></li>
@@ -406,5 +406,11 @@
 </section>
 
 {% include "base/footer.html" %}
-
+{% block script %}
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="{% static "js/js.js" %}"></script>
+{% endblock script %}
 {% endblock content %}

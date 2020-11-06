@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light">
+<nav class="navbar navbar-expand-lg navbar-light w-100">
     <a class="navbar-brand" href="{% url 'home' %}"><img width="170px" src="https://www.solotodo.cl/static/logo.svg"
             alt="" class="img-nav"></a>
     <button class="navbar-toggler" 
@@ -11,11 +11,11 @@
         <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
+    <div class="collapse navbar-collapse w-100" id="navbarSupportedContent">
+        <ul class="navbar-nav ">
             {% if user.is_authenticated %}
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Bienvenido: {{ user.username }}</a>
+                    <a class="nav-link" href="#">Bienvenido {{ user.username }}</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'salir' %}">Cerrar sesión</a>
@@ -32,7 +32,7 @@
 </nav>
 <div class="container mt-3">
     {% if messages %}
-        <div class="row mt-3 mb-3">
+        <div class="row mt-5 mb-3">
             {% for message in messages %}
             <div class="alert alert-{{ message.tags }}" role="alert">
                 <h4 class="alert-heading">Solo todo</h4>
