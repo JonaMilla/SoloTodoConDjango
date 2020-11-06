@@ -15,5 +15,5 @@ Trabajo desarrollado por Jonathan Castro, Cristian Barria, Luis Tapia
 
 Imagenes del proyecto:
 
-![Imagen login](https://github.com/JonaMilla/SoloTodoConDjango/master/img/login.JPG?raw=true "Login")
+![Imagen login](https://github.com/JonaMilla/SoloTodoConDjango/master/img/Login.JPG?raw=true "Login")
 
