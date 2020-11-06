@@ -8,7 +8,7 @@ La pagina puede registrar productos y mostrarlo en el menu.
 
 Requisitos:
 
-    Python 3.7 - Django  - MySql 5.7
+    Python 3.7 - Django  - MySql 5.7 - pip install Pillow
 
 
 Trabajo desarrollado por Jonathan Castro, Cristian Barria, Luis Tapia
