@@ -23,6 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('home/', views.home, name='home'),
     path('agregar/', views.agregarProducto, name='agregarProducto'),  
+    path('productoOferta/', views.productoOferta, name='productoOferta'),  
     path('', include('autenticacion.urls')),
     path('producto/<int:id_producto>',views.producto, name='producto'), 
     path('agregarProductoCarro/<int:id_producto>/', views.agregarProductoCarro, name='agregarProductoCarro'),

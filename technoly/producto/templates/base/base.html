@@ -18,6 +18,7 @@
                         <li><a class="dropdown-trigger" href="{% url 'salir' %}" >Cerrar sesión</a></li>
                         <li><a class="dropdown-trigger" href="#">Bienvenido: {{ user.username }}</a></li>
                         <li><a class="dropdown-trigger" href="{% url 'agregarProducto' %}">Agregar Producto</a></li>
+                        <li><a class="dropdown-trigger" href="{% url 'productoOferta' %}">Producto ofertas</a></li>
                         
                     {% else %}
                         <li><a class="dropdown-trigger" href="{% url 'login' %}">Iniciar sesión</a></li>

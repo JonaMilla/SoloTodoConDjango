@@ -1,7 +1,7 @@
 from django.http import request
 from django.shortcuts import redirect, render
-from .models import Project
-from .forms import FormProject
+from .models import Project, ProductoOferta
+from .forms import FormProject, FormProducto
 from django.contrib.auth.decorators import login_required
 from .carrito import Carro
 
@@ -9,10 +9,12 @@ from .carrito import Carro
 def home(request):
     carro = Carro(request)
     projects = Project.objects.all()
+    #ProductoOfertaEnOfertas = ProductoOferta.objects.all()
     return render(
         request,
         "principal.html",
-        {'projects':projects}
+        {'projects':projects},
+        #{'ProductoOfertaEnOfertas': ProductoOfertaEnOfertas}
     )
 
 @login_required(login_url='/')
@@ -44,7 +46,24 @@ def agregarProducto(request):
         context
     )
 
-
+@login_required(login_url='/')
+def productoOferta(request):
+    formulario = FormProducto()
+    if request.method == 'POST':
+        formulario = FormProducto(request.POST, request.FILES)
+        if formulario.is_valid():
+            nuevoFormulario = formulario.save(commit=False)
+            nuevoFormulario.usuario = request.user
+            nuevoFormulario.save()
+            return redirect('/home/')
+    context = {
+        'formulario': formulario
+    }
+    return render(
+        request,
+        'ProductoOferta.html',
+        context
+    )
 #carrito
 @login_required(login_url='/')
 def agregarProductoCarro(request, id_producto):

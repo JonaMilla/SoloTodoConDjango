@@ -1,5 +1,5 @@
 from django import forms
-from .models  import Project
+from .models  import Project, ProductoOferta
 
 def agregarClaseFormControl(elementos):
     for campo in elementos:
@@ -11,6 +11,20 @@ class FormProject(forms.ModelForm):
         agregarClaseFormControl(self.visible_fields())
     class Meta:
         model = Project
+        fields = (
+            'name',
+            'description',
+            'precio',
+            'imagen',
+        )
+
+class FormProducto(forms.ModelForm):
+
+    def __init__(self, *args, **kwargs):
+        super(FormProducto, self).__init__(*args, **kwargs)
+        agregarClaseFormControl(self.visible_fields())
+    class Meta:
+        model = ProductoOferta
         fields = (
             'name',
             'description',
