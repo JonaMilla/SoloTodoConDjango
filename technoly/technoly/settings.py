@@ -84,9 +84,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'solotodo',
         'USER': 'root',
-        'PASSWORD': 'Jacm1435.',
+        'PASSWORD': '1234',
         'HOST': 'localhost',
-        'ROOT': '3306'
+        'ROOT': 3306
     }
 }
 
@@ -138,10 +138,3 @@ STATIC_ROOT = join(BASE_DIR, 'static', 'static_root')
 
 STATICFILES_DIRS = [join(BASE_DIR, 'static')]
 
-# Email
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_HOST_USER = 'jona.castro.millananco@gmail.com'
-EMAIL_HOST_PASSWORD = 'cmcf1435'
-EMAIL_USE_TLS = True
