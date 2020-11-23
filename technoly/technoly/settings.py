@@ -89,9 +89,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'solotodo',
         'USER': 'root',
-        'PASSWORD': 'Jacm1435.',
+        'PASSWORD': '1234',
         'HOST': 'localhost',
-        'ROOT': '3306'
+        'ROOT': 3306
     }
 }
 
@@ -140,6 +140,7 @@ STATICFILES_DIRS = [join(BASE_DIR, 'static')]
 MEDIA_URL = '/media/'
 MEDIA_ROOT = join(BASE_DIR, 'media')
 
+<<<<<<< HEAD
 # Email
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
@@ -171,4 +172,9 @@ SOCIAL_AUTH_GITHUB_SECRET = '30a8aa13c3de05adff99ec9f54fc088adf0e7077'
 
 SOCIAL_AUTH_SPOTIFY_KEY = 'c57237cb02e94e6c8c52ddfa2adeffd9'
 SOCIAL_AUTH_SPOTIFY_SECRET = 'ec0d7513a41041ca93f0319ae05ab171'
+=======
+STATIC_ROOT = join(BASE_DIR, 'static', 'static_root')
+
+STATICFILES_DIRS = [join(BASE_DIR, 'static')]
+>>>>>>> 745cf24f036f7d8c3c448b210f8100727d309997
 

@@ -294,13 +294,15 @@ footer {
     background: #343a40;
     display: flex !important;
     justify-content: space-around;
-    flex-direction: row;
+    flex-direction: row !important;
 }
+
+
 
 #foo-1 {
     display: flex;
     align-items: center;
-    flex-direction: column;
+    flex-direction: column !important;
     width: 30%;
 }
 
