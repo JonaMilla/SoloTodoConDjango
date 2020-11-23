@@ -16,10 +16,16 @@
                     <li><a class="dropdown-trigger" data-target="dropdown3" href="#">Electro</a></li>
                     {% if user.is_authenticated %}
                         <li><a class="dropdown-trigger" href="{% url 'salir' %}" >Cerrar sesión</a></li>
-                        <li><a class="dropdown-trigger" href="#">Bienvenido: {{ user.username }}</a></li>
+                        {% if backends.associated %}
+                            {% for bkn in backends.associated %}
+                                {% if bkn.provider == 'facebook' %}
+                                    <img src="{{ bkn.extra_data.picture.data.url }}" alt="">
+                                {% endif %}
+                            {% endfor %}
+                        {% endif %}     
                         <li><a class="dropdown-trigger" href="{% url 'agregarProducto' %}">Agregar Producto</a></li>
                         <li><a class="dropdown-trigger" href="{% url 'productoOferta' %}">Producto ofertas</a></li>
-                        
+                        <li><a class="dropdown-trigger" href="#">Bienvenido: {{ user.username }}</a></li>
                     {% else %}
                         <li><a class="dropdown-trigger" href="{% url 'login' %}">Iniciar sesión</a></li>
                         <li><a class="dropdown-trigger" href="{% url 'registro' %}" class="nav-link">Registrarme</a></li>

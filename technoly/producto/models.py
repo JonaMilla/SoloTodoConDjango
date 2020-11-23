@@ -36,18 +36,3 @@ class ProductoOferta(models.Model):
     def __str__(self):
         return self.name
 
-
-
-
-"""
-class ProductoCaracteristicas(models.Model):
-    project = models.ForeignKey(Project, on_delete=models.CASCADE)
-    tipo = models.CharField(max_length=100, blank=True,verbose_name="Tipo")
-    tamanio = models.CharField(max_length=100, blank=True, verbose_name="Tamaño")
-    resolucion = models.CharField(max_length=100, blank=True, verbose_name="Resolución")
-    Tiempo_respuesta = models.CharField(max_length=100, blank=True, verbose_name="Tiempo de respuesta")
-    tasa_refresco = models.CharField(max_length=100, blank=True, verbose_name="Tasa de refresco")
-    curvatura = models.CharField(max_length=100, blank=True, verbose_name="Curvatura")
-    soporta_fresync= models.CharField(max_length=100, blank=True, verbose_name="¿Soporta FreeSync?")
-    soporta_gsync= models.CharField(max_length=100, blank=True, verbose_name="¿Soporta G-Sync?")
-"""   

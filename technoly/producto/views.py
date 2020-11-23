@@ -1,20 +1,17 @@
-from django.http import request
 from django.shortcuts import redirect, render
 from .models import Project, ProductoOferta
 from .forms import FormProject, FormProducto
 from django.contrib.auth.decorators import login_required
 from .carrito import Carro
 
-@login_required(login_url='/')
+@login_required
 def home(request):
     carro = Carro(request)
     projects = Project.objects.all()
-    #ProductoOfertaEnOfertas = ProductoOferta.objects.all()
     return render(
         request,
         "principal.html",
         {'projects':projects},
-        #{'ProductoOfertaEnOfertas': ProductoOfertaEnOfertas}
     )
 
 @login_required(login_url='/')

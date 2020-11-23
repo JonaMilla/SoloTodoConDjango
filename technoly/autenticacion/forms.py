@@ -3,9 +3,12 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
 from .models import PerfilUser
 
+
 def agregarClaseFormControl(elementos):
     for campo in elementos:
-            campo.field.widget.attrs['class'] = 'form-control'
+        campo.field.widget.attrs['class'] = 'form-control'
+
+
 
 class FormCreacionUsuario(UserCreationForm):
 
