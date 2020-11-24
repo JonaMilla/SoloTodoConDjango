@@ -11,14 +11,17 @@
                 <a href="{% url 'home' %}"><img width="170px" src="https://www.solotodo.cl/static/logo.svg" alt="" class="img-nav"></a>
 
                 <ul id="show-menu" class="ul-nav hide-on-sma-and-down">
-                    <li><a class="dropdown-trigger" data-target="dropdown1" href="#">Tecnología</a></li>
+                    <!-- <li><a class="dropdown-trigger" data-target="dropdown1" href="#">Tecnología</a></li>
                     <li><a class="dropdown-trigger" data-target="dropdown2" href="#">Hardware</a></li>
-                    <li><a class="dropdown-trigger" data-target="dropdown3" href="#">Electro</a></li>
+                    <li><a class="dropdown-trigger" data-target="dropdown3" href="#">Electro</a></li> -->
                     {% if user.is_authenticated %}
                         <li><a class="dropdown-trigger" href="{% url 'salir' %}" >Cerrar sesión</a></li>
                         {% if backends.associated %}
                             {% for bkn in backends.associated %}
                                 {% if bkn.provider == 'facebook' %}
+                                    <img src="{{ bkn.extra_data.picture.data.url }}" alt="">
+                                {% endif %}
+                                {% if bkn.provider == 'github' %}
                                     <img src="{{ bkn.extra_data.picture.data.url }}" alt="">
                                 {% endif %}
                             {% endfor %}

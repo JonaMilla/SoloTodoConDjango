@@ -4,6 +4,8 @@
 
 {% block head %}
     <link rel="stylesheet" href="{% static "css/style_2.css" %}">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
 {% endblock head %}
 
 {% block content %}
@@ -106,9 +108,60 @@
         </section>
     </section>
 </main>
+<section class="container row mt-5">
+    
+    <article class="col-md-8">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Usuario</th>
+                        <th>Fecha</th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
+                <tbody> 
+                    <!-- Aquí van los comentarios del a base de datos D: -->
+                    <tr></tr>
+                </tbody>
+            </table>
+        </div>
+    </article>
+    <article class="col-md-4">
+        <div class="card">
+            <div class="card-header">
+                <h2 class="card-title">Agregar nuevo comentario</h2>
+            </div>
+            <form action="">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="usuario">Ingrese nombre usuario</label>
+                                <input name="usuario" id="usuario" class="form-control" required maxlength="45" type="text">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="comentario">Ingrese su comentario</label>
+                                <textarea name="comentario" class="form-control" required id="comentario" cols="30" rows="10"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <input type="submit" value="Guardar" class="btn btn-success btn-block">
+                </div>
+            </form>
+        </div>
+    </article>
+</section>
 {% include "base/footer.html" %}
 {% block script %}
-<script src="{% static "js/AOC.js" %}"></script> 
+    <script src="{% static "js/AOC.js" %}"></script> 
+    <script src="{% static "js/rest_api.js" %}"></script> 
 {% endblock script %}
 {% endblock content %}
 

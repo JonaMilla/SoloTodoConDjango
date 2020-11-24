@@ -4,7 +4,7 @@ from .forms import FormProject, FormProducto
 from django.contrib.auth.decorators import login_required
 from .carrito import Carro
 
-@login_required
+@login_required(login_url='/')
 def home(request):
     carro = Carro(request)
     projects = Project.objects.all()
@@ -92,5 +92,3 @@ def limpiarProductoCarro(request):
     carro.limpiarCarro()
     return redirect('/home/')
 
-# def celular(request):
-#     return redirect('galeria_carro/celulares.html')

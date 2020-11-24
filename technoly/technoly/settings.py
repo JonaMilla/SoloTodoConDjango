@@ -29,13 +29,17 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'producto.apps.ProductoConfig',
     'autenticacion',
+    'comentario',
     'rest_framework',
     'social_django',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
+    'pwa'
 ]
+
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -89,7 +93,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'solotodo',
         'USER': 'root',
-        'PASSWORD': '1234',
+        'PASSWORD': 'Jacm1435.',
         'HOST': 'localhost',
         'ROOT': 3306
     }
@@ -134,13 +138,16 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = join(BASE_DIR, 'static', 'static_root')
-STATICFILES_DIRS = [join(BASE_DIR, 'static')]
+STATICFILES_DIRS = [
+    join(
+        BASE_DIR,
+        'static'
+        )]
 
 #media files
 MEDIA_URL = '/media/'
 MEDIA_ROOT = join(BASE_DIR, 'media')
 
-<<<<<<< HEAD
 # Email
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
@@ -169,12 +176,23 @@ SOCIAL_AUTH_FACEBOOK_EXTRA_DATA = [
 
 SOCIAL_AUTH_GITHUB_KEY = '1d99d73155ad4f130a44'
 SOCIAL_AUTH_GITHUB_SECRET = '30a8aa13c3de05adff99ec9f54fc088adf0e7077'
+SOCIAL_AUTH_GITHUB_SCOPE = ['email', 'user_link']
+SOCIAL_AUTH_GITHUB_PROFILE_EXTRA_PARAMS = {
+    'fields': 'id, name, email, picture, link'
+}
+SOCIAL_AUTH_GITHUB_EXTRA_DATA = [
+    ('name','name'),
+    ('picture','picture')
+]
+
 
 SOCIAL_AUTH_SPOTIFY_KEY = 'c57237cb02e94e6c8c52ddfa2adeffd9'
 SOCIAL_AUTH_SPOTIFY_SECRET = 'ec0d7513a41041ca93f0319ae05ab171'
-=======
-STATIC_ROOT = join(BASE_DIR, 'static', 'static_root')
 
-STATICFILES_DIRS = [join(BASE_DIR, 'static')]
->>>>>>> 745cf24f036f7d8c3c448b210f8100727d309997
-
+#Cargar archivos service worker
+PWA_SERVICE_WORKER_PATH = join(
+    BASE_DIR,
+    'static',
+    'sw',
+    'serviceworker.js'
+)
