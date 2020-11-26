@@ -70,6 +70,14 @@ def agregarProductoCarro(request, id_producto):
     return redirect('/home/')
 
 
+
+def clima(request):
+    return render(
+        request,
+        'clima.html'
+    )
+
+
 @login_required(login_url='/')
 def eliminarProductoCarro(request, id_producto):
     carro = Carro(request)
@@ -91,4 +99,5 @@ def limpiarProductoCarro(request):
     carro = Carro(request)
     carro.limpiarCarro()
     return redirect('/home/')
+
 

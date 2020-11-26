@@ -1,0 +1,37 @@
+(% load static %)
+
+{% extends "base/base.html" %}
+
+{% block content %}
+
+
+
+<section>
+    <div class="titulo">
+        <h1>Aplicación Meteorológia</h1>
+    </div>
+    <div class="buscador">
+        <input type="text" class="inputValue" placeholder="Ingresa la ciudad">
+        <input type="button" value="Buscar" class="button">
+        <button onclick="Agregar()" class="btn info">Agregar</button>
+        <button onclick="Eliminar()" class="btn danger">Eliminar</button>
+    </div> 
+</section>
+
+<h3>Lista de Busqueda</h3>
+<div id="listado"></div>
+
+<h4>Total de Busqueda</h4>
+<div style="font-size: 25px;" id="contador"></div>
+
+<div class="display">
+    <h1 class="name"></h1>
+    <p class="descripcion"></p>
+    <p class="temperatura"></p>
+</div>
+
+
+
+
+
+{% endblock content %}
