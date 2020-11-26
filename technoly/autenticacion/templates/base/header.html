@@ -1,44 +1,51 @@
 <nav class="navbar navbar-expand-lg navbar-light w-100">
     <a class="navbar-brand" href="{% url 'home' %}"><img width="170px" src="https://www.solotodo.cl/static/logo.svg"
             alt="" class="img-nav"></a>
-    <button class="navbar-toggler" 
-            type="button" 
-            data-toggle="collapse" 
-            data-target="#navbarSupportedContent" 
-            aria-controls="navbarSupportedContent" 
-            aria-expanded="false" 
-            aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse w-100" id="navbarSupportedContent">
         <ul class="navbar-nav ">
             {% if user.is_authenticated %}
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Bienvenido {{ user.username }}</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'salir' %}">Cerrar sesión</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'agregarProducto' %}">Agregar Producto</a>
-                </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Bienvenido {{ user.username }}</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'salir' %}">Cerrar sesión</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'agregarProducto' %}">Agregar Producto</a>
+            </li>
             {% else %}
-                <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Iniciar sesión</a></li>
-                <li class="nav-item"><a class="nav-link" href="{% url 'registro' %}">Registrarme</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Iniciar sesión</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'registro' %}">Registrarme</a></li>
             {% endif %}
         </ul>
     </div>
 </nav>
 <div class="container mt-3">
     {% if messages %}
-        <div class="row mt-5 mb-3">
-            {% for message in messages %}
-            <div class="alert alert-{{ message.tags }}" role="alert">
-                <h4 class="alert-heading">Solo todo</h4>
-                <p>{{ message }}</p>
-            </div>
-            {% endfor %}
+    <div class="row mt-5 mb-3">
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}" role="alert">
+            <h4 class="alert-heading">Solo todo</h4>
+            <p>{{ message }}</p>
         </div>
+        {% endfor %}
+    </div>
     {% endif %}
 </div>
+<!-- <div class="container mt-3">
+    {% if messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show row mt-5 mb-3" role="alert">
+        {% for message in messages %}
+        <strong>Solotodo</strong> <p>{{ message }}</p>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        {% endfor %}
+    </div>
+    {% endif %}
+</div> -->
