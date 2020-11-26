@@ -6,5 +6,4 @@ urlpatterns = [
     path('', login, name='login'),
     path('salir/', salir, name='salir'),
     path('social/', include('social_django.urls', namespace='social')),# social:url}
-    path('accounts/', include('allauth.urls')),
 ]

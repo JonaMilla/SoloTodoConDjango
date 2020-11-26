@@ -29,13 +29,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'producto.apps.ProductoConfig',
     'autenticacion',
-    'comentario',
     'rest_framework',
     'social_django',
-    'allauth',
-    'allauth.account',
-    'allauth.socialaccount',
-    'allauth.socialaccount.providers.google',
     'pwa'
 ]
 
@@ -56,9 +51,6 @@ ROOT_URLCONF = 'technoly.urls'
 AUTHENTICATION_BACKENDS = [
     'social_core.backends.facebook.FacebookOAuth2',
     'social_core.backends.github.GithubOAuth2',
-    'social_core.backends.instagram.InstagramOAuth2',
-    'social_core.backends.spotify.SpotifyOAuth2',
-    'allauth.account.auth_backends.AuthenticationBackend',
     'django.contrib.auth.backends.ModelBackend'
 ]
 

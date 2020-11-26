@@ -1,4 +1,4 @@
-const nombreCache = 'pwa-v1';
+const nombreCache = 'services-v1';
 
 self.addEventListener("install", function(event){
     console.log("SW se esta instalando...");
@@ -9,7 +9,6 @@ self.addEventListener("install", function(event){
                 '/',
                 '/home',
                 '/agregar',
-                '/producto',
                 '/static/css/bootstrap.min.css',
                 '/static/css/materialize.min.css',
                 '/static/js/materialize.min.js',

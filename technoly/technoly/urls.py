@@ -17,7 +17,6 @@ urlpatterns = [
     path('eliminarProductoCarro/<int:id_producto>/', views.eliminarProductoCarro, name='eliminarProductoCarro'),
     path('decrementarProductoCarro/<int:id_producto>/', views.decrementarProductoCarro, name='decrementarProductoCarro'),
     path('limpiarProductoCarro/', views.limpiarProductoCarro, name='limpiarProductoCarro'),
-    path('api/',include('comentario.urls'),name = 'api'),
 ]
 
 if settings.DEBUG:
