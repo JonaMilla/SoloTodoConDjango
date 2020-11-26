@@ -43,12 +43,13 @@ $(function() {
                     }
                 },
                 {
-                    breakpoint: 600,
+                    breakpoint: 365,
                     settings: {
                         slidesToShow: 1,
                         slidesToScroll: 1
                     }
                 }
+
             ]
         });
     })

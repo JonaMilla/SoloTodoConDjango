@@ -108,8 +108,8 @@
         </section>
     </section>
 </main>
-<section class="container row mt-5">
-    
+
+<section class="container row mt-5">    
     <article class="col-md-8">
         <div class="table-responsive">
             <table class="table">
@@ -158,12 +158,10 @@
         </div>
     </article>
 </section>
+
 {% include "base/footer.html" %}
 {% block script %}
-    <script src="{% static "js/AOC.js" %}"></script> 
     <script src="{% static "js/rest_api.js" %}"></script> 
+    <script src="{% static "js/AOC.js" %}"></script>     
 {% endblock script %}
 {% endblock content %}
-
-
-

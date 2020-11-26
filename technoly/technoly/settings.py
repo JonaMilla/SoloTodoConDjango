@@ -190,9 +190,4 @@ SOCIAL_AUTH_SPOTIFY_KEY = 'c57237cb02e94e6c8c52ddfa2adeffd9'
 SOCIAL_AUTH_SPOTIFY_SECRET = 'ec0d7513a41041ca93f0319ae05ab171'
 
 #Cargar archivos service worker
-PWA_SERVICE_WORKER_PATH = join(
-    BASE_DIR,
-    'static',
-    'sw',
-    'serviceworker.js'
-)
+PWA_SERVICE_WORKER_PATH = join(BASE_DIR,'static','sw','serviceworker.js')

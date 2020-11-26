@@ -15,36 +15,6 @@ body {
     padding: 0 1rem;
 }
 
-#menu-navegacion {
-    display: flex;
-}
-
-.nav-wrapper {
-    background: #315e85;
-    display: flex;
-}
-
-.dropdown-content li>a,
-.dropdown-content li>span {
-    font-size: 14px !important;
-    color: #495057;
-}
-
-.nav-wrapper .ul-nav .dropdown-trigger {
-    font-size: 16px;
-    font-weight: bold;
-}
-
-.dropdown-content {
-    width: 150px !important;
-}
-
-.nav-wrapper .ul-nav .dropdown-trigger {
-    font-size: 16px;
-    font-weight: bold;
-}
-
-
 /* style de carrito */
 
 .btn,
@@ -71,21 +41,6 @@ body {
     display: flex;
     flex-wrap: wrap;
 }
-
-/* .card {
-    width: 300px;
-    margin-left: 10px;
-    padding: 10px;
-    text-align: center;
-    border-radius: 86px 0px 86px 0px;
-    -moz-border-radius: 86px 0px 86px 0px;
-    -webkit-border-radius: 86px 0px 86px 0px;
-    border: 0px solid #000000;
-    overflow: hidden;
-    -webkit-box-shadow: 13px -15px 5px -9px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 13px -15px 5px -9px rgba(0, 0, 0, 0.75);
-    box-shadow: 13px -15px 5px -9px rgba(0, 0, 0, 0.75);
-} */
 
 .img-fluid {
     width: 250px;
@@ -116,88 +71,6 @@ aside {
     cursor: pointer;
 }
 
-
-/* BUSCADORE DE CONTENIDO */
-
-
-/* icon de buscar */
-
-#ctn-icon-search i {
-    right: 55px;
-    top: 22px;
-    font-size: 20px;
-    color: #fff;
-    cursor: pointer;
-    transition: all 300ms;
-    position: absolute;
-}
-
-#ctn-icon-search i:hover {
-    opacity: 0.5;
-}
-
-#ctn-bars-search {
-    position: fixed;
-    left: 50%;
-    transform: translateX(-50%);
-    top: -100px;
-    width: 100%;
-    height: 85px;
-    background: #fff;
-    padding: 20px 0;
-    /* esto era el problema por que el menu lateral no aparecia */
-    z-index: 9;
-    transition: all 250ms;
-}
-
-#ctn-bars-search input {
-    display: block;
-    width: 850px;
-    margin: auto;
-    padding: 0 10px;
-    font-size: 15px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    outline: 0;
-    overflow: hidden;
-}
-
-#box-search {
-    position: fixed;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 134px;
-    width: 900px;
-    background: #fff;
-    z-index: 8;
-    display: none;
-}
-
-#box-search li a {
-    display: block;
-    width: 900px;
-    color: #777777;
-    padding: 12px 20px;
-}
-
-#box-search li a:hover {
-    background: #f3f3f3;
-}
-
-#box-search li a i {
-    margin-right: 10px;
-    color: #777777;
-}
-
-#cover-ctn-search {
-    width: 100%;
-    height: 100% !important;
-    position: fixed;
-    left: 0;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 7;
-    display: none;
-}
 
 .input-field {
     background: #fff;

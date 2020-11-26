@@ -18,7 +18,6 @@ urlpatterns = [
     path('decrementarProductoCarro/<int:id_producto>/', views.decrementarProductoCarro, name='decrementarProductoCarro'),
     path('limpiarProductoCarro/', views.limpiarProductoCarro, name='limpiarProductoCarro'),
     path('api/',include('comentario.urls'),name = 'api'),
-    # path('',mostarPantallaComentario)
 ]
 
 if settings.DEBUG:

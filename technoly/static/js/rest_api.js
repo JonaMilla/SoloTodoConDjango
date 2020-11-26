@@ -4,11 +4,11 @@
             init();
         }
     });
-    // Declaración de constantes 
-    const URL_COMENTARIO = w.location.href + "api/comentario/";
-    let COMENTARIOS = [];
+    //DECLARACIÓN DE CONSTANTES
+    const URL_COMENTARIO = w.location.href + "api/comentario/"
+    let COMENTARIOS = []
     const TBODY = document.getElementsByTagName("tbody")[0];
-    // Metodos de utilidad
+    //MÉTODOS DE UTILIDAD
     function borrarTodo(){
         const btnBorrar = d.getElementById("btnBorrar");
         btnBorrar.addEventListener("click",function(){
@@ -34,20 +34,21 @@
             }
         });
     }
-    function agregarNuevoComentario(){
+
+    function agregarComentario(){
         const formulario = d.getElementsByTagName("form")[1];
         formulario.addEventListener("submit",function(e){
             e.preventDefault();
-            const titulo = formulario.titulo.value.trim();
-            const comentario = formulario.comentario.value.trim();
+            const usuario = formulario.usuario.value.trim()
+            const comentario = formulario.comentario.value.trim()
             const objetoSalida = {
-                titulo : titulo,
+                usuario: usuario,
                 comentario: comentario
             };
             fetch(URL_COMENTARIO,{
-                method:'POST', // POST, PUT, PATCH
+                method:'POST',
                 headers:{
-                    "Content-Type":"application/json"
+                    "Content-type":"application/json"
                 },
                 body:JSON.stringify(objetoSalida)
             })
@@ -57,51 +58,46 @@
             .then(function(data){
                 console.table(data);
                 formulario.reset();
-                alert("Agregado con exito...");
-                agregarTRALaTabla(data);
+                alert("Agregado con éxito...")
+                agregarATabla(data);
             })
             .catch(function(error){
                 console.error(error);
             })
             .finally(function(){
-                console.info("Petición para agregar terminada....")
+                console.info("Petición agregar terminada")
             });
         })
     }
-    function irABuscarLosComentarios(){
+
+    function buscarComentarios(){
         fetch(URL_COMENTARIO)
         .then(function(respuesta){
             return respuesta.json();
         })
         .then(function(data){
-            COMENTARIOS =  data;
+            COMENTARIOS = data
             TBODY.innerHTML = "";
             for(const comentario of COMENTARIOS){
-                agregarTRALaTabla(comentario);
+                agregarATabla(comentario);
             }
         })
-        .catch(function(error){
-            console.error(error);
+        .cath(function(error){
+            console.error(error)
         })
         .finally(function(){
-            console.info("Petición de comentarios finalizada");
+            console.info("Petición de comentario finalizada")
         })
     }
-    function agregarTRALaTabla(comentario){
-        // Una tabla Tiene una fila TR y muchas columnas TD
-        // Creamos un elemento TR
+
+    function agregarATabla(comentario){
         const tr = d.createElement("tr");
         tr.id = comentario.id;
-        // Creamos los hijos del TR osae... los TD son 4.
-        // TD Titulo
-        const tdTitulo = d.createElement("td");
-        tdTitulo.innerText = comentario.titulo;
+        const tdUsuario = d.createElement("td");
+        tdUsuario.innerText = comentario.usuario;
         // TD Fecha
         const tdFecha = d.createElement("td");
         tdFecha.innerText = comentario.fecha;
-        // TD EStado
-        const tdEstado = d.createElement("td");
-        tdEstado.innerText = comentario.activo === 1?"Pendiente":"Finalizado";
         // TD Acción
         const tdAccion = d.createElement("td");
         // Btn Modificar
@@ -129,23 +125,24 @@
         tdAccion.appendChild(btnModificar);
         tdAccion.appendChild(btnAccion);
         // Construimos el TR
-        tr.appendChild(tdTitulo);
+        tr.appendChild(tdUsuario);
         tr.appendChild(tdFecha);
-        tr.appendChild(tdEstado);
         tr.appendChild(tdAccion);
         TBODY.appendChild(tr);
         console.log(comentario);
     }
+
     function modificar(comentarioId){
         console.log(comentarioId);
     }
+
     function accionComentario(comentarioId,accion){
         console.log(comentarioId,accion);
     }
     // Metodo de inicio :D
     function init(){
-        agregarNuevoComentario();
-        irABuscarLosComentarios();
+        agregarComentario();
+        buscarComentarios();
         borrarTodo();
     }
 })(document,window,$)

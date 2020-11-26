@@ -3,52 +3,54 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 {% endblock head %}
 
-<a class="ml-2 btn btn-sm btn-outline-primary" href="{% url 'limpiarProductoCarro' %}" 
-            role="button">Vaciar carrito</a>
-<table class="table table-bordered flex-row bd-highlight mb-3">
-    <thead>
-        <tr>
-            <th colspan="5" class="text-center">
-            Carrito de compras de solotodo
-            </th>
-            
-        </tr>
-        <tr>
-            <th>Nombre</th>
-            <th>Descripción</th>
-            <th>Precio</th>
-            <th>Cantidad</th>
-            <th>Acciones</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% if request.session.carro.items %}
-            {% for key, value in request.session.carro.items %}
-                <tr class="text-center">
-                    <td>{{ value.nombre }}</td>
-                    <td>{{ value.descripcion }}</td>
-                    <td>{{ value.precio }}</td>
-                    <td>{{ value.cantidad }}</td>
-                    <td>
-                        <a
-                            href="{% url 'agregarProductoCarro' value.id_producto %}"
-                            class="btn btn-sm btn-success"> +
-                        </a>
-                        <a
-                            href="{% url 'decrementarProductoCarro' value.id_producto %}"
-                            class="ml-2 btn-sm btn btn-danger">-
-                        </a>                   
+<div class="table-responsive-sm">
+    <table class="table table-hover flex-row bd-highlight mt-5">
+        <thead>
+            <tr>
+                <th colspan="5" class="text-center">
+                Carrito de compras de solotodo
+                </th>
+                
+            </tr>
+            <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Descripción</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if request.session.carro.items %}
+                {% for key, value in request.session.carro.items %}
+                    <tr class="text-center">
+                        <td>{{ value.nombre }}</td>
+                        <td>{{ value.descripcion }}</td>
+                        <td>{{ value.precio }}</td>
+                        <td>{{ value.cantidad }}</td>
+                        <td>
+                            <a
+                                href="{% url 'agregarProductoCarro' value.id_producto %}"
+                                class="btn btn-sm btn-success"> +
+                            </a>
+                            <a
+                                href="{% url 'decrementarProductoCarro' value.id_producto %}"
+                                class="ml-2 btn-sm btn btn-danger">-
+                            </a>                   
+                        </td>
+                    </tr>
+                {% endfor %}
+            {% else %}
+                <tr>
+                    <td colspan="5">
+                        <div class="alert alert-danger text-center">
+                            No tienes productos en el carrito
+                        </div>
                     </td>
                 </tr>
-            {% endfor %}
-        {% else %}
-            <tr>
-                <td colspan="5">
-                    <div class="alert alert-danger text-center">
-                        No tienes productos en el carrito
-                    </div>
-                </td>
-            </tr>
-        {% endif %}
-    </tbody>
-</table>
+            {% endif %}
+        </tbody>
+    </table>
+</div>
+<a class="ml-2 btn btn-sm btn-outline-primary" href="{% url 'limpiarProductoCarro' %}" 
+role="button">Vaciar carrito</a>

@@ -10,6 +10,10 @@ a{
     text-decoration: none;
 }
 
+html{
+    width: 100%;
+}
+
 body {
     background: #f5f5f5;
 }
@@ -18,125 +22,6 @@ header{
     width: 100% !important;
 }
 
-.nav-wrapper {
-    background: #315e85;
-    display: flex;
-    width: 100% !important;
-}
-
-.dropdown-content li>a,
-.dropdown-content li>span {
-    font-size: 14px !important;
-    color: #495057;
-}
-
-.nav-wrapper .ul-nav .dropdown-trigger {
-    font-size: 16px;
-    font-weight: bold;
-}
-
-
-.dropdown-content {
-    width: 150px !important;
-}
-
-
-/* ICON DEL MENU */
-
-#icon-menu {
-    position: absolute;
-    right: 20px;
-    top: 16px;
-    font-size: 20px;
-    color: #fff;
-    display: none;
-    cursor: pointer;
-}
-
-#icon-menu:hover {
-    opacity: 0.7;
-}
-
-/* BUSCADOR DE CONTENIDO */
-
-/* icon de buscar */
-
-#ctn-icon-search i {
-    right: 55px;
-    top: 22px;
-    font-size: 20px;
-    color: #fff;
-    cursor: pointer;
-    transition: all 300ms;
-    position: absolute;
-}
-
-#ctn-icon-search i:hover {
-    opacity: 0.5;
-}
-
-#ctn-bars-search {
-    position: fixed;
-    left: 50%;
-    transform: translateX(-50%);
-    top: -100px;
-    width: 100%;
-    height: 85px;
-    background: #fff;
-    padding: 20px 0;
-    /* esto era el problema por que el menu lateral no aparecia */
-    z-index: 9;
-    transition: all 250ms;
-}
-
-#ctn-bars-search input {
-    display: block;
-    width: 850px;
-    margin: auto;
-    padding: 0 10px;
-    font-size: 15px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    outline: 0;
-    overflow: hidden;
-}
-
-#box-search {
-    position: fixed;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 145px;
-    width: 900px;
-    background: #fff;
-    z-index: 8;
-    display: none;
-}
-
-#box-search li a {
-    display: block;
-    width: 900px;
-    color: #777777;
-    padding: 12px 20px;
-}
-
-#box-search li a:hover {
-    background: #f3f3f3;
-}
-
-#box-search li a i {
-    margin-right: 10px;
-    color: #777777;
-}
-
-#cover-ctn-search {
-    width: 100%;
-    height: 100% !important;
-    position: fixed;
-    left: 0;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 7;
-    display: none;
-}
 
 
 /* IMAGENES SLIDER*/
@@ -144,69 +29,6 @@ header{
 #tabs-swipe-demo {
     margin: 5px;
     border: 1px solid #ccc;
-}
-
-.title {
-    font-weight: 300;
-    font-size: 1.7rem;
-    padding-right: 15px;
-    padding-left: 15px;
-    color: #343a40;
-    margin-bottom: .5rem;
-    display: block;
-}
-
-.global-page {
-    width: 90%;
-    margin: auto;
-}
-
-.global-page .img-slider {
-    width: 100%;
-}
-
-.name-producto {
-    color: rgb(17, 17, 17);
-    font-size: 14px;
-    font-weight: 400;
-}
-
-.desc-producto {
-    color: grey;
-    font-size: 16px;
-    font-weight: 400;
-    margin-bottom: 20px;
-}
-
-.precio-producto {
-    font-weight: 700;
-    font-size: 18px;
-    padding-top: 10px;
-    color: #ca0000;
-}
-
-.slider-tec .short-description-product {
-    border: 1px solid #ccc;
-    margin: 10px 10px;
-    border-radius: 3px;
-    padding: 20px 15px 7px;
-    height: 350px;
-    background: #ffffff;
-    display: flex;
-    flex-flow: wrap column;
-    justify-content: space-around;
-}
-
-.slider-tec .content{
-    font-size: 18px;
-}
-
-.slider-tec .short-description-product:hover {
-    opacity: .7;
-}
-
-.slider-tec2 .short-description-product2:hover {
-    opacity: .7;
 }
 
 .arrows {
@@ -334,6 +156,11 @@ footer #foo-con {
     text-align: center;
 }
 
+#slick-slide-control09,
+#slick-slide-control010,
+#slick-slide-control011{
+    display: none;
+}
 
 /* Responsive design - adaptable a dispositivos mobiles */
 
@@ -392,6 +219,7 @@ footer #foo-con {
 }
 
 @media screen and (max-width: 600px) {
+
     /* menu */
     .ul-nav {
         height: 100vh;
@@ -446,6 +274,22 @@ footer #foo-con {
 }
 
 @media screen and (max-width:360px) {
+    .slider-tec .short-description-product{
+        width: 50%;
+    }
+    .card{
+        width: 50%;
+        height: 50%;
+    }
+    .global-page .img-slider {
+        width: 40px;
+    }
+    html{
+        width: 100%;
+    }
+    body{
+        width: 100%;
+    }
     .table-cotizaciones {
         width: 100%;
         margin-left: 0px;
