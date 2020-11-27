@@ -7,8 +7,7 @@ self.addEventListener("install", function(event){
         .then(function(cacheEncontrada){
             return cacheEncontrada.addAll([
                 '/',
-                '/home',
-                '/agregar',
+                '/home/',
                 '/static/css/bootstrap.min.css',
                 '/static/css/materialize.min.css',
                 '/static/js/materialize.min.js',

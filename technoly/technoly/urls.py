@@ -7,7 +7,7 @@ from producto import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('pwa.urls')),
+    path('/', include('pwa.urls')),
     path('home/', views.home, name='home'),
     path('agregar/', views.agregarProducto, name='agregarProducto'),  
     path('productoOferta/', views.productoOferta, name='productoOferta'),  

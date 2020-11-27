@@ -5,12 +5,12 @@ var name = document.querySelector('.nombre');
 var descripcion = document.querySelector('.descripcion');
 var temperatura = document.querySelector('.temperatura');
 var ciudad = document.querySelector('.ciudad');
-var listado = document.getElementById('listado');
+//var listado = document.getElementById('listado');
 var contador = document.getElementById('contador');
 
-if(contenido.length==0){
-    listado.innerHTML = "No se ha buscado ciudad";
-}
+// if(contenido.length==0){
+//     listado.innerHTML = "No se ha buscado ciudad";
+// }
 function Agregar(){
     contenido.push(inputValue.value);
     listado.innerHTML= contenido;

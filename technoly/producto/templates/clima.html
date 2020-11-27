@@ -3,35 +3,33 @@
 {% extends "base/base.html" %}
 
 {% block content %}
-
-
-
 <section>
     <div class="titulo">
-        <h1>Aplicación Meteorológia</h1>
+        <h1 id="ti-clima">Aplicación <br> Meteorológica</h1>
     </div>
     <div class="buscador">
-        <input type="text" class="inputValue" placeholder="Ingresa la ciudad">
-        <input type="button" value="Buscar" class="button">
-        <button onclick="Agregar()" class="btn info">Agregar</button>
-        <button onclick="Eliminar()" class="btn danger">Eliminar</button>
-    </div> 
+        <div class="ingrese-ciudad">
+            <input id="jaja" type="text" class="inputValue" placeholder="Ingresa la ciudad">
+        </div>
+        <div class="container-buscar">
+            <input id="bu" type="button" value="Buscar" class="button">
+        </div>
+        <!-- <div class="agre-eli">
+                <button onclick="Agregar()" class="btn info">Agregar</button>
+                <button onclick="Eliminar()" class="btn danger">Eliminar</button>
+            </div> -->
+    </div>
 </section>
 
-<h3>Lista de Busqueda</h3>
+<h3>Lista de <br> Búsqueda</h3>
 <div id="listado"></div>
 
-<h4>Total de Busqueda</h4>
+<h4 id="ti-clima">Total de Búsqueda</h4>
 <div style="font-size: 25px;" id="contador"></div>
 
 <div class="display">
     <h1 class="name"></h1>
     <p class="descripcion"></p>
     <p class="temperatura"></p>
-</div>
-
-
-
-
-
+</div> 
 {% endblock content %}
